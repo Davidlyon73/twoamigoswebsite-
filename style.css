@@ -59,6 +59,12 @@ body {
 
 /* General Button Styling */
 
+.btn:focus,
+.sidebar a:focus {
+    outline: 2px dashed #451400; /* High-contrast outline */
+    outline-offset: 2px;
+}
+
 .cta-buttons .btn {
   display: inline-block;
   padding: 10px 20px;
@@ -86,7 +92,6 @@ body {
 
 /* Dropdown Menu */
 .dropdown-menu {
-  display: none;
   position: absolute;
   top: 100%;
   left: 0;
@@ -124,7 +129,7 @@ body {
 }
 .button {
   display: inline-block;
-  font-family:"Poppins', sans-serif";;
+  font-family:"Poppins', sans-serif";
   padding: 10px 20px;
   font-size: 1rem;
   font-weight: bold;
@@ -144,8 +149,8 @@ body {
 
 /* Align Buttons to Right */
 .home-button-container {
-  display: flex-start; /* Enables Flexbox */
-  justify-content: flex /* Align buttons to the right */
+  display: flex; /* Enables Flexbox */
+  justify-content: flex-start /* Align buttons to the right */
   flex-direction: row; /* Align buttons horizontally */
   align-items: center; /* Center buttons vertically */
   padding: 20px; /* Add padding around the container */
@@ -353,8 +358,7 @@ footer {
 }
 
 .menu-category {
-  margin-bottom: 40px;
-  display: none; /* Hidden by default */
+  display: none;
 }
 
 .menu-category.active {
@@ -489,7 +493,6 @@ footer {
   transition: all 0.3s ease-in-out;
 }
 
-
 /* Info Box Container */
 .info-box-container {
   position: fixed;
@@ -570,7 +573,6 @@ footer {
     display: none; 
   }
   
-
   .info-box-container {
     display: none;
   }
@@ -614,10 +616,6 @@ footer {
     padding: 15px; /* Add padding */
     background-color: rgba(255, 255, 255, 0.9); /* Slightly more visible background */
     box-shadow: none; /* Remove shadow */
-  }
-
-  .menu-category {
-    padding: 10px 5px;
   }
 
   /* Button Adjustments */
@@ -695,126 +693,9 @@ footer {
 /* For iPhones and Small Screens */
 @media screen and (max-width: 480px) {
   /* Sidebar Adjustments */
-  .sidebar {
-    position: fixed; /* Fix it to the top */
-    top: 0; /* Align at the very top */
-    left: 0; /* Align to the left edge */
-    width: 100%; /* Full width of the screen */
-    margin: 0; /* Remove margin */
-    padding: 10px; /* Add padding */
-    background-color: rgba(255, 255, 255, 0.95); /* Slightly transparent background */
-    z-index: 1000; /* Stay above other elements */
-    display: flex;
-    justify-content: center; /* Center links horizontally */
-    flex-wrap: wrap; /* Wrap links to avoid overflow */
-    gap: 10px; /* Add spacing between links */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
-  }
 
   .reservation-dropdown {
     display: none; 
   }
 
-
-  .sidebar a {
-    font-size: 1rem; /* Slightly larger font for readability */
-    padding: 8px 12px; /* Improve touch target size */
-    border-radius: 8px; /* Rounded corners */
-    background-color: #451400; /* Link background color */
-    color: white; /* Text color */
-    text-align: center; /* Center text */
-    transition: all 0.3s ease; /* Smooth hover effects */
-  }
-
-  .sidebar a:hover {
-    background-color: #6b2a00; /* Darker shade on hover */
-    transform: scale(1.05); /* Slight scaling for interactivity */
-  }
-
-  /* Menu Container Adjustments */
-  .menu-container {
-    margin-top: 80px; /* Add space below the fixed sidebar */
-    width: 100%; /* Full width of the screen */
-    padding: 15px; /* Add padding for layout consistency */
-    background-color: rgba(255, 255, 255, 0.95); /* Slightly more visible background */
-    box-shadow: none; /* Remove shadow for a cleaner appearance */
-  }
-
-  .menu-category {
-    padding: 10px 5px;
-  }
-
-  /* Buttons for Small Screens */
-  .cta-buttons .btn {
-    display: block; /* Ensure buttons stack vertically */
-    width: 100%; /* Full width of the container */
-    padding: 12px 15px; /* Add padding for touch targets */
-    font-size: 1rem; /* Maintain readable font size */
-    font-family: 'Poppins', sans-serif;
-    font-weight: bold;
-    text-align: center; /* Center text alignment */
-    color: white; /* White text */
-    background-color: #451400; /* Button background color */
-    border-radius: 8px; /* Rounded corners */
-    border: none; /* Remove any borders */
-    margin-bottom: 10px; /* Space between buttons */
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Add subtle shadow */
-    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
-  }
-
-  .cta-buttons .btn:hover {
-    background-color: #6b2a00; /* Darker hover effect */
-    transform: scale(1.05); /* Slightly scale up */
-  }
-
-  /* Align Buttons */
-  .home-button-container {
-    display: flex; /* Use flexbox layout */
-    flex-direction: column; /* Stack buttons vertically */
-    align-items: flex-start; /* Align to the left */
-    padding: 10px; /* Add padding */
-    gap: 15px; /* Space between buttons */
-    margin-bottom: 20px; /* Add space below the container */
-  }
-
-  /* Video Adjustments */
-  .video-container {
-    height: auto;
-  }
-
-  video {
-    display: none; /* Hide video */
-  }
-
-  .video-fallback {
-    display: block;
-    width: 100%;
-    height: auto;
-    object-fit: cover; /* Ensure scaling fits the screen */
-  }
-
-  /* Footer Adjustments */
-  footer {
-    padding: 15px 10px;
-    font-size: 0.8rem;
-    line-height: 1.2;
-  }
-
-  .logos-container a img {
-    width: 30px; /* Adjust icon size */
-    height: 30px;
-  }
-
-  .badge {
-    width: 80px; /* Smaller badge */
-  }
-
-  /* Background Adjustments */
-  .adressbackground,
-  .menubackground {
-    background: none; /* Remove background images */
-    background-color: #f5f5f5; /* Set a plain background color */
-  }
- 
 }
-
