@@ -701,21 +701,43 @@ footer {
 /* For iPhone specifically (small screens) */
 @media screen and (max-width: 480px) {
   .sidebar {
-    position: relative;
+    position: fixed; /* Keeps it fixed on the screen */
+    top: 0; /* Stick it to the top */
+    left: 0; /* Stick it to the left */
     width: 100%; /* Full width */
-    margin: 10px 0; /* Space above and below */
-    padding: 10px;
+    padding: 10px 0; /* Add some padding */
+    background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent background */
+    z-index: 1000; /* Make sure it stays on top */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
     display: flex;
     flex-wrap: wrap; /* Wrap items if too long */
     justify-content: center; /* Center items */
     gap: 10px; /* Space between links */
-  }
+}
 
-  .sidebar a {
+/* Sidebar Links */
+.sidebar a {
     font-size: 0.9rem; /* Adjust font size */
     padding: 5px 10px; /* Adjust padding */
     border-radius: 8px; /* Softer corners */
-  }
+    color: #451400; /* Text color */
+    text-decoration: none; /* Remove underline */
+    background-color: rgba(255, 255, 255, 0.7); /* Button background */
+    border: 1px solid #ccc; /* Border for definition */
+    transition: background-color 0.3s, transform 0.2s; /* Smooth hover effects */
+}
+
+/* Hover Effect */
+.sidebar a:hover {
+    background-color: #451400; /* Darker background on hover */
+    color: #fff; /* White text */
+    transform: scale(1.05); /* Slight zoom effect */
+}
+
+/* Adjust Main Content to Avoid Overlap */
+.menu-container {
+    margin-top: 60px; /* Adjust for the height of the fixed sidebar */
+}
 
   /* Menu Container Adjustments */
   .menu-container {
