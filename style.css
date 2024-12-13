@@ -544,7 +544,7 @@ footer {
   opacity: 0.8;
 }
 
-/* Dropping Animation */
+/* Default Dropping Animation for larger screens */
 @keyframes dropVegetable {
   0% {
     transform: translateX(-50%) translateY(-100px); /* Start above the box */
@@ -559,6 +559,19 @@ footer {
     transform: translateX(-50%) translateY(100px); /* Drop out of view */
   }
 }
+
+/* Apply the Dropping Animation */
+.info-box::after {
+  animation: dropVegetable 2s infinite ease-in-out;
+}
+
+/* Disable Dropping Animation on smartphones */
+@media screen and (max-width: 768px) {
+  .info-box::after {
+    animation: none; /* Disable the animation */
+  }
+}
+
 
 /*adress  
 
@@ -700,7 +713,7 @@ footer {
 
 /* For iPhone specifically (small screens) */
 @media screen and (max-width: 480px) {
-  sidebar {
+.sidebar {
     position: relative; /* Position the sidebar above the menu */
     top: 0; /* Move to the top */
     left: 0; /* Reset any left alignment */
@@ -733,8 +746,6 @@ footer {
 .sidebar a:hover {
     background-color: #6b2a00; /* Darker shade on hover */
     transform: scale(1.05); /* Slightly scale up on hover */
-}
-
 }
 
   /* Menu Container Adjustments */
@@ -790,5 +801,9 @@ footer {
   .badge {
     width: 80px; /* Smaller badge */
   }
-}
+  .adressbackground,
+    .menubackground {
+        background: none; /* Remove the background image */
+        background-color: #f5f5f5; /* Set a plain background color */
+    }
 }
