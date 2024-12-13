@@ -812,8 +812,6 @@ footer {
     background: none; /* Remove background images */
     background-color: #f5f5f5; /* Set a plain background color */
   }
-  .remove-on-small {
-    display: none !important;
-  }
+ 
 }
 
