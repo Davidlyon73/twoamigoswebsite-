@@ -58,7 +58,7 @@ body {
 }
 
 /* General Button Styling */
-/* Buttons */
+
 .cta-buttons .btn {
   display: inline-block;
   padding: 10px 20px;
@@ -565,108 +565,6 @@ footer {
   animation: dropVegetable 2s infinite ease-in-out;
 }
 
-/* Disable Dropping Animation on smartphones */
-@media screen and (max-width: 768px) {
-  .info-box::after {
-    animation: none; /* Disable the animation */
-  }
-}
-
-
-/*adress  
-
-/* Location Container */
-.location-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-/* Page Title */
-.location-title {
-  font-size: 3.5rem;
-  color: #ffffff;
-  margin-bottom: 30px;
-  text-align: left;
-}
-
-/* Content Container */
-.content-container {
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  align-items: flex-start;
-}
-
-/* Location Cards */
-.location-cards {
-  flex: 1; /* Occupies the remaining space next to the map */
-}
-
-.location-card {
-  background-color: #050505;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(255, 252, 252, 0.1);
-  margin-bottom: 20px;
-  padding: 15px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.location-card:hover {
-  transform: scale(1.03);
-  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
-}
-
-.dropdown-toggle {
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: #ffffff;
-  background: none;
-  border: none;
-  text-align: left;
-  width: 100%;
-  cursor: pointer;
-  padding: 10px;
-  border-bottom: 1px solid #ddd;
-  transition: color 0.3s ease;
-}
-
-.dropdown-toggle:hover {
-  color: #ffffff;
-}
-
-.dropdown-content {
-  display: none;
-  padding: 10px 0;
-  font-size: 0.9rem;
-  color: #ffffff;
-}
-
-.address,
-.phone {
-  margin: 5px 0;
-}
-
-.direction-link {
-  display: inline-block;
-  margin-top: 10px;
-  padding: 8px 12px;
-  background-color: #565252;
-  color: rgb(251, 251, 251);
-  text-decoration: none;
-  border-radius: 5px;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.direction-link:hover {
-  background-color: #451400;
-  transform: scale(1.05);
-}
-
-/* Responsive Styles */
-
-
-/* For Tablet and Small Screens */
 @media screen and (max-width: 768px) {
   #map {
     display: none; 
@@ -676,118 +574,84 @@ footer {
     display: none;
   }
 
-  /* Menu Container Adjustments */
-  .menu-container {
-    margin-top: 10px; /* Adjust space below sidebar */
-    margin-left: 0; /* Remove left margin */
-    width: 100%; /* Take full width */
-    padding: 20px;
-    background-color: rgba(255, 255, 255, 0.9); /* Slight background */
-  }
-
-  /* Video Adjustments */
-  .video-desktop {
-    display: none;
-  }
-  .video-fallback {
-    display: block;
-    width: 100%;
-  }
-
-  /* Home Button Adjustments */
-  .home-button-container {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
   /* Sidebar Adjustments */
   .sidebar {
-    position: relative;
-    width: 100%; /* Full width for smaller screens */
+    position: fixed; /* Fix it at the top */
     top: 0;
     left: 0;
-    padding: 10px; /* Add padding */
-    margin-bottom: 20px; /* Adds spacing below */
-    display: flex;
-    justify-content: center; /* Center links */
-    flex-wrap: wrap; /* Allow links to wrap */
-    gap: 10px; /* Space between links */
-    background-color: rgba(255, 255, 255, 0.9); /* Light background */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  }
-
-  .sidebar a {
-    font-size: 0.8rem; /* Smaller font for phones */
-    padding: 5px 8px; /* Smaller padding */
-    border-radius: 10px; /* Softer edges */
-    background-color: #451400; /* Link background color */
-    color: white; /* Text color */
-    text-align: center; /* Center align text */
-    transition: all 0.3s ease; /* Smooth hover effect */
-  }
-
-  .sidebar a:hover {
-    background-color: #6b2a00; /* Darker shade on hover */
-    transform: scale(1.05); /* Slightly scale up on hover */
-  }
-}
-
-/* For iPhone specifically (small screens) */
-@media screen and (max-width: 480px) {
-  /* Sidebar Adjustments */
-  .sidebar {
-    position: fixed; /* Fix it to the top */
-    top: 0; /* Align at the very top */
-    left: 0; /* Reset any left alignment */
-    width: 100%; /* Span the full width */
-    margin: 0; /* Remove margin */
+    width: 100%; /* Full width */
+    margin: 0; /* Remove margins */
     padding: 10px; /* Add padding */
     background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent */
     z-index: 1000; /* Ensure it is above other elements */
     display: flex;
-    justify-content: center; /* Center the links horizontally */
-    flex-wrap: wrap; /* Wrap links if they are too long */
-    gap: 10px; /* Add spacing between links */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    justify-content: center; /* Center links horizontally */
+    flex-wrap: wrap; /* Allow wrapping */
+    gap: 10px; /* Add space between links */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
   }
 
   .sidebar a {
-    font-size: 1rem; /* Slightly larger font for better readability */
-    padding: 8px 12px; /* Add padding for clickable area */
-    border-radius: 8px; /* Rounded corners for a modern look */
+    font-size: 0.9rem; /* Adjust font size */
+    padding: 8px 12px; /* Better touch targets */
+    border-radius: 8px; /* Rounded corners */
     background-color: #451400; /* Sidebar link background color */
     color: white; /* Text color */
-    text-align: center; /* Center the text */
-    transition: all 0.3s ease; /* Add smooth transitions for hover effects */
+    text-align: center; /* Center align text */
+    transition: all 0.3s ease; /* Smooth hover effects */
   }
 
   .sidebar a:hover {
-    background-color: #6b2a00; /* Darker shade on hover */
-    transform: scale(1.05); /* Slightly scale up on hover */
+    background-color: #6b2a00; /* Darker hover color */
+    transform: scale(1.05); /* Slight scaling for interactivity */
   }
 
   /* Menu Container Adjustments */
   .menu-container {
-    margin-top: 80px; /* Add space to prevent overlap with the sidebar */
+    margin-top: 60px; /* Add space to prevent overlap with the sidebar */
     width: 100%; /* Take full width */
     padding: 15px; /* Add padding */
     background-color: rgba(255, 255, 255, 0.9); /* Slightly more visible background */
-    box-shadow: none; /* Remove shadow for cleaner appearance */
+    box-shadow: none; /* Remove shadow */
   }
 
   .menu-category {
     padding: 10px 5px;
   }
 
-  /* Home Button Adjustments */
+  /* Button Adjustments */
+  .cta-buttons .btn {
+    display: block; /* Stack buttons vertically */
+    width: 100%; /* Full width of container */
+    padding: 12px 15px; /* Adjust padding */
+    font-size: 1rem; /* Readable font size */
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    text-align: center; /* Center-align text */
+    color: white; /* White text */
+    background-color: #451400; /* Button color */
+    border-radius: 8px; /* Rounded corners */
+    border: none; /* No border */
+    margin-bottom: 10px; /* Space between buttons */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+
+  .cta-buttons .btn:hover {
+    background-color: #6b2a00; /* Darker hover effect */
+    transform: scale(1.05); /* Slight scaling */
+  }
+
   .home-button-container {
-    flex-direction: column; /* Stack buttons vertically */
-    align-items: center; /* Center-align */
-    gap: 10px; /* Space between buttons */
+    display: flex;
+    flex-direction: column; /* Stack vertically */
+    align-items: flex-start; /* Align to the top-left */
+    padding: 10px; /* Add padding */
+    gap: 15px; /* Space between buttons */
     margin-bottom: 20px;
   }
 
-  /* Video Container Adjustments */
+  /* Video Adjustments */
   .video-container {
     height: auto;
   }
@@ -800,19 +664,141 @@ footer {
     display: block;
     width: 100%;
     height: auto;
-    object-fit: cover; /* Ensure the image scales nicely */
+    object-fit: cover; /* Ensure scaling */
   }
 
   /* Footer Adjustments */
   footer {
     padding: 15px 10px;
-    font-size: 0.8rem; /* Smaller font */
+    font-size: 0.8rem;
     line-height: 1.2;
   }
 
-  /* Adjust Buttons in Footer */
   .logos-container a img {
-    width: 30px; /* Smaller icons */
+    width: 30px; /* Adjust icon size */
+    height: 30px;
+  }
+
+  .badge {
+    width: 80px;
+  }
+
+  /* Background Adjustments */
+  .adressbackground,
+  .menubackground {
+    background: none; /* Remove background image */
+    background-color: #f5f5f5; /* Plain color */
+  }
+  .remove-on-small {
+    display: none !important;
+  }
+}
+
+/* For iPhones and Small Screens */
+@media screen and (max-width: 480px) {
+  /* Sidebar Adjustments */
+  .sidebar {
+    position: fixed; /* Fix it to the top */
+    top: 0; /* Align at the very top */
+    left: 0; /* Align to the left edge */
+    width: 100%; /* Full width of the screen */
+    margin: 0; /* Remove margin */
+    padding: 10px; /* Add padding */
+    background-color: rgba(255, 255, 255, 0.95); /* Slightly transparent background */
+    z-index: 1000; /* Stay above other elements */
+    display: flex;
+    justify-content: center; /* Center links horizontally */
+    flex-wrap: wrap; /* Wrap links to avoid overflow */
+    gap: 10px; /* Add spacing between links */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+  }
+
+  .sidebar a {
+    font-size: 1rem; /* Slightly larger font for readability */
+    padding: 8px 12px; /* Improve touch target size */
+    border-radius: 8px; /* Rounded corners */
+    background-color: #451400; /* Link background color */
+    color: white; /* Text color */
+    text-align: center; /* Center text */
+    transition: all 0.3s ease; /* Smooth hover effects */
+  }
+
+  .sidebar a:hover {
+    background-color: #6b2a00; /* Darker shade on hover */
+    transform: scale(1.05); /* Slight scaling for interactivity */
+  }
+
+  /* Menu Container Adjustments */
+  .menu-container {
+    margin-top: 80px; /* Add space below the fixed sidebar */
+    width: 100%; /* Full width of the screen */
+    padding: 15px; /* Add padding for layout consistency */
+    background-color: rgba(255, 255, 255, 0.95); /* Slightly more visible background */
+    box-shadow: none; /* Remove shadow for a cleaner appearance */
+  }
+
+  .menu-category {
+    padding: 10px 5px;
+  }
+
+  /* Buttons for Small Screens */
+  .cta-buttons .btn {
+    display: block; /* Ensure buttons stack vertically */
+    width: 100%; /* Full width of the container */
+    padding: 12px 15px; /* Add padding for touch targets */
+    font-size: 1rem; /* Maintain readable font size */
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    text-align: center; /* Center text alignment */
+    color: white; /* White text */
+    background-color: #451400; /* Button background color */
+    border-radius: 8px; /* Rounded corners */
+    border: none; /* Remove any borders */
+    margin-bottom: 10px; /* Space between buttons */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Add subtle shadow */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
+  }
+
+  .cta-buttons .btn:hover {
+    background-color: #6b2a00; /* Darker hover effect */
+    transform: scale(1.05); /* Slightly scale up */
+  }
+
+  /* Align Buttons */
+  .home-button-container {
+    display: flex; /* Use flexbox layout */
+    flex-direction: column; /* Stack buttons vertically */
+    align-items: flex-start; /* Align to the left */
+    padding: 10px; /* Add padding */
+    gap: 15px; /* Space between buttons */
+    margin-bottom: 20px; /* Add space below the container */
+  }
+
+  /* Video Adjustments */
+  .video-container {
+    height: auto;
+  }
+
+  video {
+    display: none; /* Hide video */
+  }
+
+  .video-fallback {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover; /* Ensure scaling fits the screen */
+  }
+
+  /* Footer Adjustments */
+  footer {
+    padding: 15px 10px;
+    font-size: 0.8rem;
+    line-height: 1.2;
+  }
+
+  .logos-container a img {
+    width: 30px; /* Adjust icon size */
     height: 30px;
   }
 
@@ -823,10 +809,11 @@ footer {
   /* Background Adjustments */
   .adressbackground,
   .menubackground {
-    background: none; /* Remove the background image */
+    background: none; /* Remove background images */
     background-color: #f5f5f5; /* Set a plain background color */
   }
+  .remove-on-small {
+    display: none !important;
+  }
 }
-
-
 
