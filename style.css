@@ -689,10 +689,7 @@ footer {
   .menubackground {
     background: none; /* Remove background image */
     background-color: #f5f5f5; /* Plain color */
-  }
-  .remove-on-small {
-    display: none !important;
-  }
+  
 }
 
 /* For iPhones and Small Screens */
