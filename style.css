@@ -706,5 +706,46 @@ footer {
   .menu-container {
     margin-top: 10px; /* Add space between sidebar and menu */
   }
+/* iPhone SE, 5S */
+@media screen and (max-width: 320px) {
+  .menu-container {
+      margin: 0 auto;
+      width: 90%; /* Adjust container width */
+  }
+  .sidebar {
+      display: block;
+      position: relative; /* Move above content */
+      width: 100%; /* Make it full-width */
+      padding: 10px;
+  }
+}
+
+/* iPhone 6, 7, 8 */
+@media screen and (max-width: 375px) {
+  .menu-container {
+      margin: 0 auto;
+      width: 90%;
+  }
+  .sidebar {
+      display: block;
+      width: 100%;
+      position: relative;
+      padding: 15px;
+  }
+}
+
+/* iPhone 6/7/8 Plus, X, 11, 12, 13 */
+@media screen and (max-width: 414px) {
+  .menu-container {
+      margin: 0 auto;
+      width: 90%;
+  }
+  .sidebar {
+      display: block;
+      width: 100%;
+      position: relative;
+      padding: 15px;
+  }
+}
 
 }
