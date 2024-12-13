@@ -654,7 +654,10 @@ footer {
 
 /* Tablet and Small Screens */
 @media screen and (max-width: 768px) {
-  #map,
+  #map {
+    display: none; 
+  }
+
   .info-box-container {
     display: none;
   }
@@ -697,33 +700,75 @@ footer {
 
 /* For iPhone specifically (small screens) */
 @media screen and (max-width: 480px) {
+  .sidebar {
+    position: relative;
+    width: 100%; /* Full width */
+    margin: 10px 0; /* Space above and below */
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap; /* Wrap items if too long */
+    justify-content: center; /* Center items */
+    gap: 10px; /* Space between links */
+  }
+
   .sidebar a {
-    font-size: 0.7rem; /* Even smaller font for tiny screens */
-    padding: 4px 6px; /* Compact padding */
+    font-size: 0.9rem; /* Adjust font size */
+    padding: 5px 10px; /* Adjust padding */
+    border-radius: 8px; /* Softer corners */
   }
 
+  /* Menu Container Adjustments */
   .menu-container {
-    padding: 15px;
+    width: 100%; /* Take full width */
+    margin: 0;
+    padding: 15px; /* Add padding */
+    background-color: rgba(255, 255, 255, 0.9); /* Slightly more visible background */
+    box-shadow: none; /* Remove shadow for cleaner appearance */
   }
 
-  /* Buttons stack vertically */
+  .menu-category {
+    padding: 10px 5px;
+  }
+
+  /* Home Button Adjustments */
   .home-button-container {
-    flex-direction: column;
-    gap: 5px;
+    flex-direction: column; /* Stack buttons vertically */
+    align-items: center; /* Center-align */
+    gap: 10px; /* Space between buttons */
+    margin-bottom: 20px;
   }
 
-  /* Ensure the video fallback image scales properly */
+  /* Video Container Adjustments */
   .video-container {
     height: auto;
   }
 
   video {
-    display: none;
+    display: none; /* Hide video */
   }
 
   .video-fallback {
     display: block;
     width: 100%;
     height: auto;
+    object-fit: cover; /* Ensure the image scales nicely */
   }
+
+  /* Footer Adjustments */
+  footer {
+    padding: 15px 10px;
+    font-size: 0.8rem; /* Smaller font */
+    line-height: 1.2;
+  }
+
+  /* Adjust Buttons in Footer */
+  .logos-container a img {
+    width: 30px; /* Smaller icons */
+    height: 30px;
+  }
+
+  .badge {
+    width: 80px; /* Smaller badge */
+  }
+}
 }
