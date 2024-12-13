@@ -569,6 +569,10 @@ footer {
   #map {
     display: none; 
   }
+  
+  .reservation-dropdown {
+    display: none; 
+  }
 
   .info-box-container {
     display: none;
@@ -712,6 +716,11 @@ footer {
     gap: 10px; /* Add spacing between links */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
   }
+
+  .reservation-dropdown {
+    display: none; 
+  }
+
 
   .sidebar a {
     font-size: 1rem; /* Slightly larger font for readability */
