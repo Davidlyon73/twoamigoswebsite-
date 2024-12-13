@@ -659,7 +659,10 @@ footer {
     display: none;
   }
   .menu-container {
-    margin: 0 20px;
+    margin-top: 10px; /* Adjust space below sidebar */
+    margin-left: 0; /* Remove left margin */
+    width: 100%; /* Take full width */
+    padding: 20px;
   }
   .video-desktop {
     display: none;
@@ -674,78 +677,53 @@ footer {
   }
 
   .sidebar {
-    position: relative; /* Move the sidebar to the flow of the document */
+    position: relative;
+    width: 100%; /* Full width for smaller screens */
     top: 0;
     left: 0;
-    width: 100%; /* Make it full width */
-    padding: 10px; /* Smaller padding */
-    margin-bottom: 10px; /* Add spacing below the sidebar */
-    background-color: rgba(245, 245, 245, 0.9); /* Slightly transparent background */
-    box-shadow: none; /* Remove shadow for simplicity */
-    text-align: center; /* Center the content */
+    padding: 10px;
+    margin-bottom: 20px; /* Adds spacing below */
+    display: flex;
+    justify-content: center; /* Center links */
+    gap: 10px; /* Space between links */
+  }
+
+  .sidebar a {
+    font-size: 0.8rem; /* Smaller font for phones */
+    padding: 5px 8px; /* Smaller padding */
+    border-radius: 10px; /* Softer edges */
   }
 }
 
-/* Mobile Screens */
+/* For iPhone specifically (small screens) */
 @media screen and (max-width: 480px) {
-  .menu-title .title {
-    font-size: 1em;
+  .sidebar a {
+    font-size: 0.7rem; /* Even smaller font for tiny screens */
+    padding: 4px 6px; /* Compact padding */
   }
-  .menu-title .price {
-    font-size: 0.9em;
-  }
-  .menu-container {
-    margin: 0 10px;
-  }
-  
-  .sidebar {
-    width: 100%; /* Full width for mobile */
-    padding: 5px; /* Smaller padding for smaller screens */
-    font-size: 0.9rem; /* Adjust font size */
-  }
-  .menu-container {
-    margin-top: 10px; /* Add space between sidebar and menu */
-  }
-/* iPhone SE, 5S */
-@media screen and (max-width: 320px) {
-  .menu-container {
-      margin: 0 auto;
-      width: 90%; /* Adjust container width */
-  }
-  .sidebar {
-      display: block;
-      position: relative; /* Move above content */
-      width: 100%; /* Make it full-width */
-      padding: 10px;
-  }
-}
 
-/* iPhone 6, 7, 8 */
-@media screen and (max-width: 375px) {
   .menu-container {
-      margin: 0 auto;
-      width: 90%;
+    padding: 15px;
   }
-  .sidebar {
-      display: block;
-      width: 100%;
-      position: relative;
-      padding: 15px;
-  }
-}
 
-/* iPhone 6/7/8 Plus, X, 11, 12, 13 */
-@media screen and (max-width: 414px) {
-  .menu-container {
-      margin: 0 auto;
-      width: 90%;
+  /* Buttons stack vertically */
+  .home-button-container {
+    flex-direction: column;
+    gap: 5px;
   }
-  .sidebar {
-      display: block;
-      width: 100%;
-      position: relative;
-      padding: 15px;
-  }
-}
 
+  /* Ensure the video fallback image scales properly */
+  .video-container {
+    height: auto;
+  }
+
+  video {
+    display: none;
+  }
+
+  .video-fallback {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
 }
