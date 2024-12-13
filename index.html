@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Two Amigos - Un restaurant offrant une fusion unique de cuisine mexicaine et californienne à Lyon.">
+    <meta name="author" content="Two Amigos Restaurant">
+    <meta property="og:title" content="Two Amigos - Restaurant">
+    <meta property="og:description" content="Découvrez la fusion mexicaine-californienne à Two Amigos à Lyon.">
+    <meta property="og:image" content="images/restaurant-image.jpg">
+    <meta property="og:url" content="https://www.twoamigos.com">
+    <title>Two Amigos - Restaurant</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon"> <!-- Added favicon -->
+    
+    <!-- Structured data for SEO -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Restaurant",
+        "name": "Two Amigos",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "1 rue Henri IV",
+          "addressLocality": "Lyon",
+          "postalCode": "69002",
+          "addressCountry": "FR"
+        },
+        "telephone": "+33 09 53 11 86 70",
+        "url": "https://www.twoamigos.com",
+        "sameAs": [
+          "https://www.facebook.com/twoamigoslyon",
+          "https://www.instagram.com/twoamigos",
+          "https://www.tiktok.com/@twoamigoslyon"
+        ],
+        "restaurant": [
+          {
+            "@type": "Restaurant",
+            "name": "Two Amigos Hotel de Ville",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "11 rue terme",
+              "addressLocality": "Lyon",
+              "postalCode": "69001",
+              "addressCountry": "FR"
+            },
+            "telephone": "+33 09 54 69 98 23"
+          },
+          {
+            "@type": "Restaurant",
+            "name": "Two Amigos Ampere",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "1 rue Henri IV",
+              "addressLocality": "Lyon",
+              "postalCode": "69002",
+              "addressCountry": "FR"
+            },
+            "telephone": "+33 09 53 11 86 70"
+          }
+        ]
+      }
+    </script>  
+  </head>
+  <body>
+    <!-- Vidéo d'accueil -->
+    <div class="video-container">
+      <video autoplay muted loop loading="lazy">
+        <source src="videos/home-video.mp4" type="video/mp4">
+        Votre navigateur ne supporte pas les vidéos.
+      </video>
+    </div>
+    
+    <!-- Include jQuery before other scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="jsfiles/reservation.js"></script>  
+
+    <!-- Navigation -->
+    <div class="overlay">
+      <img src="images/logo.png" alt="Logo de Two Amigos" class="logo" loading="lazy">
+      <h1 class="welcome-text">Bienvenue chez Two Amigos</h1>
+      <p class="subtitle">Quand la tradition mexicaine rencontre l’esprit californien!</p>
+
+      <div class="cta-buttons .btn ">
+        <div class="reservation-dropdown">
+          <button class="btn dropdown-button" aria-haspopup="true" aria-expanded="false" aria-label="Réserver une table">
+            Réserver une table 
+          </button>
+          <div class="dropdown-menu" role="menu">
+            <a href="https://app.resmio.com/two-amigos-hotel-de-ville-2/widget" class="dropdown-item" role="menuitem">Two Amigos Hotel de Ville</a>
+            <a href="https://app.resmio.com/two-amigos/widget" class="dropdown-item" role="menuitem">Two Amigos Henri IV</a>
+          </div>
+        </div>
+
+        <div class="reservation-dropdown">
+          <button class="btn dropdown-button" aria-haspopup="true" aria-expanded="false" aria-label="Commander maintenant">
+            Commander en ligne 
+          </button>
+          <div class="dropdown-menu" role="menu">
+            <a href="https://www.foodbooking.com/ordering/restaurant/menu" class="dropdown-item" role="menuitem">Commander à Two Amigos Hotel de Ville</a>
+            <a href="https://www.foodbooking.com/ordering/restaurant/menu" class="dropdown-item" role="menuitem">Commander à Two Amigos Henri IV</a>
+          </div>
+        </div>
+      <a href="menu.html" class="button">Découvrir notre menu</a>
+      <a href="adress.html" class="button">Nos restaurants</a>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <div class="logos-container">
+          <!-- Social Media Links -->
+          <a href="https://www.tiktok.com/@twoamigoslyon" target="_blank" aria-label="Visit our TikTok">
+              <img src="images/tiktok-icon.png" alt="TikTok Icon" loading="lazy">
+          </a>
+          <a href="https://www.instagram.com/twoamigos" target="_blank" aria-label="Visit our Instagram">
+              <img src="images/instagram-icon.png" alt="Instagram Icon" loading="lazy">
+          </a>
+          <a href="https://www.facebook.com/twoamigoslyon" target="_blank" aria-label="Visit our Facebook">
+              <img src="images/facebook-icon.png" alt="Facebook Icon" loading="lazy">
+          </a>
+  
+          <!-- Maitre Restaurateur Badge -->
+          <img src="images/maitre-restaurateur.png" alt="Maitre Restaurateur Badge" loading="lazy" class="badge">
+      </div>
+      <!-- Footer Text -->
+      <p class="pfooter">&copy; 2024 Two Amigos. Tous droits réservés.</p>
+  </footer>
+
+    <!-- Include Scripts -->
+    <script src="jsfiles/jsreservation.js"></script>
+  </body>
+</html>

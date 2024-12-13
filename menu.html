@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - Two Amigos</title>
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body class="menubackground">
+    <!-- Button Container -->
+    <div class="home-button-container">
+        <!-- Home Button -->
+        <a href="index.html" class="button">Accueil</a>
+        <a href="adress.html" class="button">Nos restaurants</a>
+        
+        <!-- Dropdown Button for Table Reservation -->
+        <div class="reservation-dropdown">
+          <a href="#" class="button dropdown-button" aria-haspopup="true" aria-expanded="false" aria-label="Réserver une table">
+            Réserver une Table
+          </a>
+          <div class="dropdown-menu" role="menu">
+            <a href="https://app.resmio.com/two-amigos-hotel-de-ville-2/widget" class="dropdown-item" role="menuitem">
+              Two Amigos Hotel de Ville
+            </a>
+            <a href="https://app.resmio.com/two-amigos/widget" class="dropdown-item" role="menuitem">
+              Two Amigos Henri IV
+            </a>
+          </div>
+        </div>
+      
+        <!-- Dropdown Button for Online Ordering -->
+        <div class="reservation-dropdown">
+          <a href="#" class="button dropdown-button" aria-haspopup="true" aria-expanded="false" aria-label="Commander en ligne">
+            Commander en ligne
+          </a>
+          <div class="dropdown-menu" role="menu">
+            <a href="https://www.foodbooking.com/ordering/restaurant/menu" class="dropdown-item" role="menuitem">
+              Two Amigos Hotel de Ville
+            </a>
+            <a href="https://www.foodbooking.com/ordering/restaurant/menu" class="dropdown-item" role="menuitem">
+              Two Amigos Henri IV
+            </a>
+          </div>
+        </div>
+      </div>
+      
+    <div class="info-box-container">
+        <!-- First Info Box -->
+        <div class="info-box">
+            Chez nous, chaque plat est une véritable création maison, élaborée avec soin à partir de produits frais et d’une qualité irréprochable.
+            
+        </div>
+      
+        <!-- Second Info Box -->
+        <div class="info-box">
+          Nos viandes bovines et notre volaille sont issues d’élevages locaux, 
+          sélectionnés avec soin dans la région Auvergne-Rhône-Alpes, pour garantir fraîcheur et qualité.
+        </div>
+
+      </div>
+
+  <!-- Banner Section -->
+        <div class="sidebar">
+            <a href="#" class="section-button" data-target="appetizers">Appetizers</a>
+            <a href="#" class="section-button" data-target="signatureburritos">Signature Burritos</a>
+            <a href="#" class="section-button" data-target="QuesadillasSalades">Quesadillas & Salades</a>
+            <a href="#" class="section-button" data-target="NachosTacos">Nachos & Tacos</a>
+            <a href="#" class="section-button" data-target="desserts">Desserts</a>
+            <a href="#" class="section-button" data-target="cocktails">Cocktails</a>
+        </div>
+
+    <!-- Menu Container -->
+    <div class="menu-container">
+        <!-- Appetizers Section -->
+        <div class="menu-category active" id="appetizers">
+            <div class="category-header">
+                <h2>APPETIZERS</h2>
+            </div>
+            <div class="menu-item">
+                <div class="menu-title">
+                    <span class="title"><strong>TAQUITOS</strong></span>
+                    <span class="price">12€</span>
+                </div>
+                <p class="description">Galettes de maïs garnies de poulet, fromage et piments jalapeños. Accompagnées de guacamole.</p>
+            </div>
+            <div class="menu-item">
+                <div class="menu-title">
+                    <span class="title"><strong>VEGAN TAQUITOS</strong></span>
+                    <span class="price">11€</span>
+                </div>
+                <p class="description">Galettes de maïs garnies avec un ecrasé de haricots noirs, oignons,coriandre et jalapenos. Servies avec du guacamole et salsa roja.</p>
+            </div>
+            <div class="menu-item">
+                <div class="menu-title">
+                    <span class="title"><strong>WOODY’S FAVORITE</strong></span>
+                    <span class="price">12€</span>
+                </div>
+                <p class="description">Galettes de blé frites garnies de bœuf effiloché, fromages et piment jalapeños. Accompagnées de guacamole.</p>
+            </div>
+            <div class="menu-item">
+                <div class="menu-title">
+                    <span class="title"><strong>JALAPEÑOS POPPERS</strong></span>
+                    <span class="price">12€</span>
+                </div>
+                <p class="description">Piments jalapeños frais farcis et gratinés de trois fromages.</p>
+            </div>
+            <div class="menu-item">
+                <div class="menu-title">
+                    <span class="title"><strong>DIP SEA</strong></span>
+                    <span class="price">12€</span>
+                </div>
+                <p class="description">Poulpe cuit à bassse temperature et déglacé au vin blanc. Servi
+                    avec des galettes de blé.</p>
+            </div>
+            <div class="menu-item">
+                <div class="menu-title">
+                    <span class="title"><strong>CHIPS, SALSA & GUACAMOLE</strong></span>
+                    <span class="price">13€</span>
+                </div>
+                <p class="description">Salsa de tomate et guacamole fait maison.</p>
+            </div>
+        </div>
+
+        <!-- Signature Burritos Section -->
+        <div class="menu-category" id="signatureburritos">
+            <div class="category-header">
+                <h2>SIGNATURE BURRITOS</h2>
+            </div>
+            <div class="menu-item">
+                <div class="menu-title">
+                    <span class="title"><strong>OUTLAW (épicé sur demande)</strong></span>
+                    <span class="price">15.5€</span>
+                </div>
+                <p class="description">Poulet braisé aux piments de pasilla, mélange de poivrons et oignons sautés à la plancha, riz et sauce à l’avocat. Gratiné avec du fromage</p>
+            </div>
+            <div class="menu-item">
+                <div class="menu-title">
+                    <span class="title"><strong>I LOVE CHEESE</strong></span>
+                    <span class="price">15.5€</span>
+                </div>
+                <p class="description">Galette de blé fritie. Garnie de poulet braisé, fromage cheddar, mozzarella et piment jalapeño. Servi avec du guacamole, riz et haricots noirs ou purée de haricots roses.</p>
+            </div>
+            <div class="menu-item">
+                <div class="menu-title">
+                    <span class="title"><strong>THE ZEN</strong></span>
+                    <span class="price">16.5€</span>
+                </div>
+                <p class="description">Boeuf braisé pendant 12H dans une sauce Mole, riz et sauce à l’avocat. Gratiné avec du fromage cheddar, sauce enchilada Accompagné d’une salade composée.</p>
+            </div>
+            <div class="menu-item">
+                <div class="menu-title">
+                    <span class="title"><strong>GIVE ME LOVE (épicé sur demande)</strong></span>
+                    <span class="price">16.5€</span>
+                </div>
+                <p class="description">Boeuf braisé pendant 12h, haricots noirs, riz, sauce à l’avocat et salsa de tomates. Gratiné avec du fromage et une sauce enchilada. Accompagné d’une salade composée.</p>
+            </div>
+            <div class="menu-item">
+                <div class="menu-title">
+                    <span class="title"><strong>GREEN PEACE (épicé sur demande)</strong></span>
+                    <span class="price">15.5€</span>
+                </div>
+                <p class="description">Mélange de poivrons et oignons sautés à la plancha, haricots noirs, guacamole, salsa et riz. Gratiné avec du fromage cheddar et sauce enchilada . Accompagné d’une salade composée.</p>
+            </div>
+            <!-- More Burritos -->
+        </div>
+        <div class="menu-category" id="QuesadillasSalades">
+            <div class="category-header">
+                <h2>QUESADILLAS</h2>
+            </div>
+            <div class="menu-item">
+                <div class="menu-title">
+                    <span class="title"><strong>ORIGINAL</strong></span>
+                    <span class="price">15.5€</span>
+                </div>
+                <p class="description">Galette de blé toastée et garnie de poulet braisé aux piments pasilla, fromage cheddar, mozzarela et pico de gallo. Servie avec du riz, haricots noirs ou purée de haricots roses, guacamole et pico de gallo.</p>
+            </div>
+            <div class="menu-item">
+                <div class="menu-title">
+                    <span class="title"><strong>THE MEXICAN CHORIZO</strong></span>
+                    <span class="price">15.5€</span>
+                </div>
+                <p class="description">Galette de blé toastée et garnie de chorizo mexicain maison et fromage cheddar et mozzarela. Accompagnée d’une salade composée.</p>
+            </div>
+            <div class="menu-item">
+                <div class="menu-title">
+                    <span class="title"><strong>VEGGIE</strong></span>
+                    <span class="price">15€</span>
+                </div>
+                <p class="description">Galette de blé toastée et garnie d’un mélange de poivrons et oignons sautés à la plancha, fromage cheddar, mozzarela et haricots noirs. Servie avec du riz, haricots noirs ou purée de haricots roses, guacamole et pico de gallo.</p>
+            </div>
+            <div class="category-header">
+                <h2>SALADES</h2>
+            </div>
+            <div class="menu-item">
+                <div class="menu-title">
+                    <span class="title"><strong>THE TACO SALADE</strong></span>
+                    <span class="price">16.5€</span>
+                </div>
+                <p class="description">Poulet mariné et grillé, pico de gallo, haricots noirs, fromage cheddar, crème fraiche et guacamole. Servie dans une galette de blé croustillante.</p>
+            </div>
+            <div class="menu-item">
+                <div class="menu-title">
+                    <span class="title"><strong>MANGO SALAD</strong></span>
+                    <span class="price">16.5€</span>
+                </div>
+                <p class="description">Salade verte composée de mangue fraiche, oignons, poivrons rouge et escalope de poulet marinée au jus d’orange et jus d’ananas. Servie dans une galette de blé croustillante.</p>
+            </div>
+        </div>
+        <div class="menu-category" id="NachosTacos">
+            <div class="category-header">
+                <h2>NACHOS</h2>
+            </div>
+            <div class="menu-item">
+                <div class="menu-title">
+                    <span class="title"><strong>KILL BILLL</strong></span>
+                    <span class="price">17€</span>
+                </div>
+                <p class="description">Chips de maïs maison recouvertes de cheddar fondu, pico de gallo, haricots noirs, poulet mariné et grillé, piments jalapeño pickle, guacamole et crème fraîche.</p>
+            </div>
+            <div class="menu-item">
+                <div class="menu-title">
+                    <span class="title"><strong>KILL BILL CHORIZO</strong></span>
+                    <span class="price">17€</span>
+                </div>
+                <p class="description">Chips de maïs maison recouvertes de cheddar fondu, chorizo mexicain maison, pico de gallo, haricots noirs, piments jalapeño pickle, guacamole et oignons rouges pickle.</p>
+            </div>
+            <div class="menu-item">
+                <div class="menu-title">
+                    <span class="title"><strong>KILL BILL VEGGIE</strong></span>
+                    <span class="price">16.5€</span>
+                </div>
+                <p class="description">Chips de maïs maison recouvertes de cheddar fondu, pico de gallo, haricots noirs, piments jalapeño pickle, guacamole et crème fraîche.</p>
+            </div>
+            <div class="category-header">
+                <h2>STREET TACOS</h2>
+            </div>
+            <div class="menu-item">
+                <div class="menu-title">
+                    <span class="title"><strong>BAJA CALIFORNIA</strong></span>
+                    <span class="price">16€</span>
+                </div>
+                <p class="description">Thon albacore mi-cuit, mayonnaise au piment chipotle maison, cranbrerries , avocat et saladeiceberg. Accompagnés d’une salade composée et d’un pudding au maïs.</p>
+            </div>
+            <div class="menu-item">
+                <div class="menu-title">
+                    <span class="title"><strong>RED SNAPPER</strong></span>
+                    <span class="price">16€</span>
+                </div>
+                <p class="description">Beignets de filets de rouget, sauce jalapeño. Servis avec un mélange d’oranges, poivrons et oignons rouges. Accompagnés d’une salade composée et d’un pudding au maïs.</p>
+            </div>
+            <div class="menu-item">
+                <div class="menu-title">
+                    <span class="title"><strong>FISHERMAN</strong></span>
+                    <span class="price">16€</span>
+                </div>
+                <p class="description">Gambas flambées à la tequila, salsa de mangues fraiches, oignons et poivrons rouges. Accompagnés d’une salade composée et d’un pudding au maïs.</p>
+            </div>
+            <div class="menu-item">
+                <div class="menu-title">
+                    <span class="title"><strong>SURF CITY</strong></span>
+                    <span class="price">15€</span>
+                </div>
+                <p class="description">Escalopes de poulet marinées dans un cocktail de jus d’orange, ananas et tequila. Servis avec de la salade iceberg, pico de gallo, fromage cheddar et sauce à l’avocat. Accompagnés de riz et purée de haricots roses.</p>
+            </div>
+            <div class="menu-item">
+                <div class="menu-title">
+                    <span class="title"><strong>COLORADO CHILI</strong></span>
+                    <span class="price">15.5€</span>
+                </div>
+                <p class="description">Poitrine de veau braisée pendant 5 heures dans une sauce aux piments Chipotle fumés. Servie avec du chou rouge en pickles. Accompagnés de riz et purée de haricots roses.</p>
+            </div>
+            <div class="menu-item">
+                <div class="menu-title">
+                    <span class="title"><strong>THE SHEPHERD</strong></span>
+                    <span class="price">16.5€</span>
+                </div>
+                <p class="description">Filet d’agneau mariné dans une sauce Adobo, salade iceberg, oignons rouges en pickles et sauce à l’avocat. Accompagnés de riz et purée de haricots roses.</p>
+            </div>
+        </div>
+        <div class="menu-category" id="desserts">
+            <div class="category-header">
+                <h2>DESSERTS MAISON</h2>
+            </div>
+            <div class="menu-item">
+                <div class="menu-title">
+                    <span class="title"><strong>Mini Chimi Changa</strong></span>
+                    <span class="price">6.5€</span>
+                </div>
+                <p class="description">Quatre petites galettes fourrées de chocolat servies avec de la glace maison à la vanille de Madagascar.</p>
+            </div>
+    
+            <div class="menu-item">
+                <div class="menu-title">
+                     <span class="title"><strong>Key Lime Pie</strong></span>
+                     <span class="price">6.5€</span>
+                </div>
+                <p class="description">Tarte au citron vert frais servie avec de la crème chantilly au citron vert.</p>
+            </div>
+            
+            <div class="menu-item">
+                <div class="menu-title">
+                     <span class="title"><strong>Pizookie Chocolat</strong></span>
+                    <span class="price">6.5€</span>
+                </div>
+                 <p class="description">Cookie mi-cuit servi avec de la glace maison à la vanille de Madagascar.</p>
+            </div>
+    
+            <div class="menu-item">
+                <div class="menu-title">
+                    <span class="title"><strong>Cheesecake</strong></span>
+                    <span class="price">6.5€</span>
+                </div>
+                    <p class="description">Bananes et crème de confiture de lait.</p>
+            </div>
+    
+            <div class="menu-item">
+                <div class="menu-title">
+                    <span class="title"><strong>Mousse au Chocolat</strong></span>
+                    <span class="price">6.5€</span>
+                </div>
+                <p class="description">Mousse de chocolat au piment d’Espelette avec des éclats de cookies et crème chantilly au caramel.</p>
+            </div>
+    
+            <div class="menu-item">
+                <div class="menu-title">
+                    <span class="title"><strong>Hot Fudge</strong></span>
+                    <span class="price">7€</span>
+                </div>
+                <p class="description">Brownie aux pépites de chocolat blanc. Servi chaud avec une sauce chocolat, caramel, des éclats de pistache et glace maison à la vanille de Madagascar.</p>
+            </div>
+    
+            <div class="menu-item">
+                <div class="menu-title">
+                    <span class="title"><strong>Fondant Chocolat & Rhubarbe</strong></span>
+                    <span class="price">7€</span>
+                </div>
+                <p class="description">Moelleux au chocolat et cœur fondant à la rhubarbe. Ce dessert est préparé à la commande, 10 minutes d’attente.</p>
+            </div>
+        </div>
+        <!-- Cocktails -->
+        <div class="menu-category" id="cocktails">
+            <!-- Cocktails Maison Section -->
+            <div class="category-header">
+                <h2>COCKTAILS MAISON</h2>
+            </div>
+
+            <div class="menu-item">
+                <div class="menu-title">
+                    <span class="title"><strong>Traditional Lime Margarita</strong></span>
+                    <span class="price">12€</span>
+                </div>
+                <p class="description">Tequila Silver, triple sec et citron vert.</p>
+            </div>
+
+            <div class="menu-item">
+                <div class="menu-title">
+                    <span class="title"><strong>Margarita aux Fleurs de Jamaïque</strong></span>
+                    <span class="price">12€</span>
+                </div>
+                <p class="description">Téquila silver, fleurs de Jamaïque, citron vert et triple sec.</p>
+            </div>
+
+            <div class="menu-item">
+                <div class="menu-title">
+                    <span class="title"><strong>Kiwi Jalapeños Margarita</strong></span>
+                    <span class="price">12€</span>
+                </div>
+                <p class="description">Téquila silver, triple sec, kiwi, jalapeños frais et citrons verts.</p>
+            </div>
+
+            <!-- Cocktails Sans Alcool Section -->
+            <div class="category-header">
+                <h2>COCKTAILS SANS AlCOOL</h2>
+            </div>
+
+            <div class="menu-item">
+                <div class="menu-title">
+                    <span class="title"><strong>Cardinal Punch</strong></span>
+                    <span class="price">9€</span>
+                </div>
+                <p class="description">Fleur de Jamaïque, jus d’orange, citron vert et romarin.</p>
+            </div>
+
+            <div class="menu-item">
+                <div class="menu-title">
+                    <span class="title"><strong>Cool as Cucumber</strong></span>
+                    <span class="price">9€</span>
+                </div>
+                <p class="description">Concombre, jus de citron vert et kiwi.</p>
+                </div>
+            </div>
+        </div>
+
+    <script src="jsfiles/menu.js"></script> <!-- Link to external JavaScript -->    
+</body>
+</html>
