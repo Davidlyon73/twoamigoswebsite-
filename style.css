@@ -665,7 +665,8 @@ footer {
 
 /* Responsive Styles */
 
-/* Tablet and Small Screens */
+
+/* For Tablet and Small Screens */
 @media screen and (max-width: 768px) {
   #map {
     display: none; 
@@ -674,12 +675,17 @@ footer {
   .info-box-container {
     display: none;
   }
+
+  /* Menu Container Adjustments */
   .menu-container {
     margin-top: 10px; /* Adjust space below sidebar */
     margin-left: 0; /* Remove left margin */
     width: 100%; /* Take full width */
     padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9); /* Slight background */
   }
+
+  /* Video Adjustments */
   .video-desktop {
     display: none;
   }
@@ -687,37 +693,53 @@ footer {
     display: block;
     width: 100%;
   }
+
+  /* Home Button Adjustments */
   .home-button-container {
     flex-direction: column;
     align-items: flex-start;
   }
 
+  /* Sidebar Adjustments */
   .sidebar {
     position: relative;
     width: 100%; /* Full width for smaller screens */
     top: 0;
     left: 0;
-    padding: 10px;
+    padding: 10px; /* Add padding */
     margin-bottom: 20px; /* Adds spacing below */
     display: flex;
     justify-content: center; /* Center links */
+    flex-wrap: wrap; /* Allow links to wrap */
     gap: 10px; /* Space between links */
+    background-color: rgba(255, 255, 255, 0.9); /* Light background */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
   }
 
   .sidebar a {
     font-size: 0.8rem; /* Smaller font for phones */
     padding: 5px 8px; /* Smaller padding */
     border-radius: 10px; /* Softer edges */
+    background-color: #451400; /* Link background color */
+    color: white; /* Text color */
+    text-align: center; /* Center align text */
+    transition: all 0.3s ease; /* Smooth hover effect */
+  }
+
+  .sidebar a:hover {
+    background-color: #6b2a00; /* Darker shade on hover */
+    transform: scale(1.05); /* Slightly scale up on hover */
   }
 }
 
 /* For iPhone specifically (small screens) */
 @media screen and (max-width: 480px) {
-.sidebar {
-    position: relative; /* Position the sidebar above the menu */
-    top: 0; /* Move to the top */
+  /* Sidebar Adjustments */
+  .sidebar {
+    position: fixed; /* Fix it to the top */
+    top: 0; /* Align at the very top */
     left: 0; /* Reset any left alignment */
-    width: 100%; /* Make it span the full width */
+    width: 100%; /* Span the full width */
     margin: 0; /* Remove margin */
     padding: 10px; /* Add padding */
     background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent */
@@ -727,13 +749,9 @@ footer {
     flex-wrap: wrap; /* Wrap links if they are too long */
     gap: 10px; /* Add spacing between links */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
-}
+  }
 
-.menu-container {
-    margin-top: 60px; /* Add space to prevent overlap with the sidebar */
-}
-
-.sidebar a {
+  .sidebar a {
     font-size: 1rem; /* Slightly larger font for better readability */
     padding: 8px 12px; /* Add padding for clickable area */
     border-radius: 8px; /* Rounded corners for a modern look */
@@ -741,17 +759,17 @@ footer {
     color: white; /* Text color */
     text-align: center; /* Center the text */
     transition: all 0.3s ease; /* Add smooth transitions for hover effects */
-}
+  }
 
-.sidebar a:hover {
+  .sidebar a:hover {
     background-color: #6b2a00; /* Darker shade on hover */
     transform: scale(1.05); /* Slightly scale up on hover */
-}
+  }
 
   /* Menu Container Adjustments */
   .menu-container {
+    margin-top: 80px; /* Add space to prevent overlap with the sidebar */
     width: 100%; /* Take full width */
-    margin: 0;
     padding: 15px; /* Add padding */
     background-color: rgba(255, 255, 255, 0.9); /* Slightly more visible background */
     box-shadow: none; /* Remove shadow for cleaner appearance */
@@ -801,9 +819,14 @@ footer {
   .badge {
     width: 80px; /* Smaller badge */
   }
+
+  /* Background Adjustments */
   .adressbackground,
-    .menubackground {
-        background: none; /* Remove the background image */
-        background-color: #f5f5f5; /* Set a plain background color */
-    }
+  .menubackground {
+    background: none; /* Remove the background image */
+    background-color: #f5f5f5; /* Set a plain background color */
+  }
 }
+
+
+
