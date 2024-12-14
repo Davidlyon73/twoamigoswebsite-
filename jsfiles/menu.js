@@ -1,29 +1,48 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const buttons = document.querySelectorAll('.section-button'); // Select all menu section buttons
-  const categories = document.querySelectorAll('.menu-category'); // Select all menu categories
+  console.log('Script Loaded');
 
-  // Functionality for section switching
-  buttons.forEach(button => {
-      button.addEventListener('click', (e) => {
-          e.preventDefault(); // Prevent default anchor behavior
+  const categories = document.querySelectorAll('.menu-category');
+  const buttons = document.querySelectorAll('.section-button');
+  const isMobile = () => window.matchMedia("(max-width: 768px)").matches; // Check if screen is mobile size
 
-          const target = button.getAttribute('data-target'); // Get the target section's ID
-          
-          // Hide all categories
-          categories.forEach(category => {
-              category.classList.remove('active');
+  const enableDesktopToggle = () => {
+      // On desktop: Enable toggle functionality
+      buttons.forEach(button => {
+          button.addEventListener('click', (e) => {
+              e.preventDefault();
+
+              // Find the target menu category
+              const target = button.getAttribute('data-target');
+              categories.forEach(category => category.classList.remove('active')); // Hide all
+              const targetCategory = document.getElementById(target);
+              if (targetCategory) {
+                  targetCategory.classList.add('active'); // Show the clicked category
+              } else {
+                  console.error(`Category with ID "${target}" not found.`);
+              }
           });
-
-          // Show the targeted category
-          const targetCategory = document.getElementById(target);
-          if (targetCategory) {
-              targetCategory.classList.add('active');
-          }
       });
-  });
+  };
 
-  // Optional: Handle cases where no buttons or sections exist
-  if (buttons.length === 0 || categories.length === 0) {
-      console.warn('No menu sections or buttons found in the HTML. Please ensure the structure is correct.');
+  const enableMobileView = () => {
+      // On mobile: Show all categories by default
+      console.log('Mobile detected: Displaying all menu categories.');
+      categories.forEach(category => category.classList.add('active')); // Display all
+  };
+
+  // Run behavior based on screen size
+  if (isMobile()) {
+      enableMobileView();
+  } else {
+      enableDesktopToggle();
   }
+
+  // Listen for screen resize to switch behavior dynamically
+  window.addEventListener('resize', () => {
+      if (isMobile()) {
+          enableMobileView();
+      } else {
+          enableDesktopToggle();
+      }
+  });
 });

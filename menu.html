@@ -2,34 +2,44 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menu - Two Amigos</title>
     <link rel="stylesheet" href="style.css"> 
 </head>
-<body class="menubackground">
-    <!-- Button Container -->
-    <div class="home-button-container">
-        <!-- Home Button -->
-        <a href="index.html" class="button">Accueil</a>
-        <a href="adress.html" class="button">Nos restaurants</a>
+<body class="menubackground menu-page">
+<header id="main-header">
+     <div class="action-buttons-container">
+        <div class="column">
+            <a href="index.html" class="button">Accueil</a>
+            <a href="#" class="button dropdown-button" aria-haspopup="true" aria-expanded="false" aria-label="Réserver une table">
+                Réserver une Table
+            </a>
+        <div class="dropdown-menu" role="menu">
+            <a href="https://app.resmio.com/two-amigos-hotel-de-ville-2/widget" class="dropdown-item" role="menuitem">
+                Hotel de Ville
+            </a>
+            <a href="https://app.resmio.com/two-amigos/widget" class="dropdown-item" role="menuitem">
+                Henri IV
+            </a>
+        </div>
     </div>
-      
-    <div class="info-box-container">
-        <!-- First Info Box -->
-        <div class="info-box">
-            Chez nous, chaque plat est une véritable création maison, élaborée avec soin à partir de produits frais et d’une qualité irréprochable.
-            
+    <div class="column">
+        <a href="adress.html" class="button">Nos restaurants</a>
+        <a href="#" class="button dropdown-button" aria-haspopup="true" aria-expanded="false" aria-label="Commander en ligne">
+            Commander en ligne
+        </a>
+        <div class="dropdown-menu" role="menu">
+            <a href="https://www.foodbooking.com/ordering/restaurant/menu" class="dropdown-item" role="menuitem">
+                Hotel de Ville
+            </a>
+            <a href="https://www.foodbooking.com/ordering/restaurant/menu" class="dropdown-item" role="menuitem">
+                Henri IV
+            </a>
         </div>
-      
-        <!-- Second Info Box -->
-        <div class="info-box">
-          Nos viandes bovines et notre volaille sont issues d’élevages locaux, 
-          sélectionnés avec soin dans la région Auvergne-Rhône-Alpes, pour garantir fraîcheur et qualité.
-        </div>
-
-      </div>
-
-  <!-- Banner Section -->
+    </div>
+  </div>
+</header>
+  <div class="parent-container">
         <div class="sidebar">
             <a href="#" class="section-button" data-target="appetizers">Appetizers</a>
             <a href="#" class="section-button" data-target="signatureburritos">Signature Burritos</a>
@@ -38,11 +48,17 @@
             <a href="#" class="section-button" data-target="desserts">Desserts</a>
             <a href="#" class="section-button" data-target="cocktails">Cocktails</a>
         </div>
-
-    <!-- Menu Container -->
+        <div class="info-box-container">
+            <div class="info-box">
+                Chez nous, chaque plat est une véritable création maison, élaborée avec soin à partir de produits frais et d’une qualité irréprochable.
+            </div>
+            <div class="info-box">
+              Nos viandes bovines et notre volaille sont issues d’élevages locaux, 
+              sélectionnés avec soin dans la région Auvergne-Rhône-Alpes, pour garantir fraîcheur et qualité.
+            </div>
+        </div>
     <div class="menu-container">
-        <!-- Appetizers Section -->
-        <div class="menu-category active" id="appetizers">
+        <div class="menu-category" id="appetizers">
             <div class="category-header">
                 <h2>APPETIZERS</h2>
             </div>
@@ -360,7 +376,8 @@
                 </div>
             </div>
         </div>
-
-    <script src="jsfiles/menu.js"></script> <!-- Link to external JavaScript -->    
+    </div>
+    <script src="jsfiles/menu.js"></script> <!-- Link to external JavaScript --> 
+    <script src="jsfiles/dropdown.js"></script>   
 </body>
 </html>

@@ -1,0 +1,705 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Poppins:wght@300;400;700&display=swap');
+
+/* Reset styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Ensure semantic elements are block-level */
+address, article, aside, div, footer, header, hgroup, main, nav, section {
+  display: block;
+}
+
+/* Base Styles (default for large screens) */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5; 
+  color: #333; 
+}
+
+.main-container {
+  display: flex;
+  flex-direction: row; /* Horizontal layout by default */
+  gap: 20px; /* Space between elements */
+  align-items: flex-start;
+  width: 100%;
+  padding: 20px;
+}
+
+.content-container {
+  display: flex;
+  flex-direction: row; /* Horizontal layout by default */
+  align-items: flex-start;
+  gap: 20px;
+}
+#map {
+  width: 50%; /* Half the screen width */
+  height: 500px; /* Default map height */
+}
+
+.custom-marker {
+  background-color: #ff6347; /* Marker background color */
+  color: white; /* Text color */
+  padding: 5px 10px; /* Padding around text */
+  border-radius: 5px; /* Rounded corners */
+  font-weight: bold; /* Bold text */
+  text-align: center; /* Center align text */
+  white-space: nowrap; /* Prevent text wrapping */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+}
+
+.info-container {
+  width: 50%; /* Half the screen width */
+  padding: 20px;
+}
+
+/* General Button Styling */
+
+.btn:focus,
+.sidebar a:focus {
+    outline: 2px dashed #451400; /* High-contrast outline */
+    outline-offset: 2px;
+}
+
+.cta-buttons .btn {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-family: "'Poppins', sans-serif";
+  font-weight: bold;
+  text-decoration: none;
+  color:  rgba(255, 255, 255, 0.753);
+  background-color: transparent;/* Button color */
+  border-radius: 5px; /* Rounded corners */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  border: none; /* Ensure no border is applied */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition for hover effects */
+}
+
+.cta-buttons .btn:hover {
+  background-color: transparent; /* Darker shade on hover */
+  transform: scale(1.05); /* Slight scaling for interactivity */
+}
+
+/* Dropdown Button */
+.dropdown-button {
+  cursor: pointer;
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #451400;
+  border: none; /* No border */
+  border-radius: 5px; /* Rounded corners */
+  padding: 10px;
+}
+
+/* Dropdown Items */
+.dropdown-item {
+  display: block;
+  padding: 8px 12px;
+  color: #ffffff; /* Dropdown item text color */
+  text-decoration: none;
+  font-size: 0.9rem;
+  border-radius: 3px; /* Slight rounding for dropdown items */
+  transition: background-color 0.2s ease; /* Smooth transition */
+}
+
+.dropdown-item:hover {
+  background-color: #451400; /* Light gray background on hover */
+}
+
+/* Dropdown Container */
+.reservation-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Show Dropdown Menu on Hover */
+.reservation-dropdown:hover .dropdown-menu {
+  display: block;
+  z-index: 1000; /* Ensures dropdown appears on top */
+}
+.button {
+  display: inline-block;
+  font-family:"Poppins', sans-serif";
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  text-decoration: none;
+  color:  rgba(255, 255, 255, 0.753);
+  background-color: transparent;
+  border-radius: 5px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.button:hover {
+  background-color: #451400;
+  transform: scale(1.05);
+}
+
+/* Align Buttons to Right */
+.home-button-container {
+  display: flex; /* Enables Flexbox */
+  justify-content: flex-start; /* Align buttons to the right */
+  flex-direction: row; /* Align buttons horizontally */
+  align-items: center; /* Center buttons vertically */
+  padding: 20px; /* Add padding around the container */
+  gap: 10px; /* Space between buttons */
+  z-index: 1000; /* Ensure it's above other elements if overlapping occurs */
+}
+
+/* Video Container */
+.video-container {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(1.2);
+  opacity: 1;
+}
+
+/* Overlay */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.logo {
+  width: 300px;
+  margin-bottom: 10px;
+  filter: brightness(0) invert(1);
+}
+
+.welcome-text { 
+  color: white;
+  font-size: 3rem;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  color: rgb(255, 255, 255);
+  font-size: 1rem;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+  margin-bottom: 20px;
+}
+
+/* Vertical Navigation */
+.vertical-nav {
+  position: fixed;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  z-index: 1000;
+}
+
+.nav-dot {
+  width: 12px;
+  height: 12px;
+  background-color: #888;
+  border-radius: 50%;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.nav-dot:hover {
+  background-color: #555;
+  transform: scale(1.2);
+}
+
+/* Footer */
+
+footer {
+    background-color: #ffffff; /* Dark background for contrast */
+    color: white;
+    padding: 20px 10px;
+    text-align: center;
+}
+
+.logos-container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Align vertically */
+    gap: 20px; /* Space between icons and the badge */
+    margin-bottom: 15px;
+}
+
+.logos-container a img {
+    width: 40px; /* Icon size for social links */
+    height: 40px;
+    transition: transform 0.3s ease; /* Add hover effect */
+}
+
+.logos-container a img:hover {
+    transform: scale(1.2); /* Slight zoom on hover */
+}
+
+.badge {
+    width: 100px; /* Badge size */
+    height: auto; /* Maintain aspect ratio */
+    max-width: 100%; /* Ensure responsiveness */
+    transition: transform 0.3s ease; /* Add hover effect */
+}
+
+.badge:hover {
+    transform: scale(1.1); /* Slight zoom on hover */
+}
+
+
+.pfooter {
+  font-size: 0.8rem; /* Font size for the text */
+  color: #131212; /* White text color */
+  margin-top: 10px; /* Add space above the footer text */
+  text-align: center; /* Center-align the text */
+  line-height: 1.5;
+  }
+
+
+/* General Styling for menu */
+
+
+.adressbackground {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(
+      rgba(255, 255, 255, 0), /* Semi-transparent overlay */
+      rgba(255, 255, 255, 0)
+    ),
+    url("images/banner.jpg") no-repeat center center fixed;
+  background-size: cover; /* Ensures the image covers the entire viewport */
+  background-attachment: fixed; /* Keeps the image fixed while scrolling */
+  height: 80%; /* Ensure it spans the full height */
+}
+
+
+.menubackground {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(
+      rgba(255, 255, 255, 0), /* Semi-transparent overlay */
+      rgba(255, 255, 255, 0)
+    ),
+    url("images/background2.png") no-repeat center center fixed;
+  background-size: cover; /* Ensures the image covers the entire viewport */
+  background-attachment: fixed; /* Keeps the image fixed while scrolling */
+  height: 80%; /* Ensure it spans the full height */
+}
+
+/* Sidebar */
+.sidebar {
+  position: fixed;
+  top: 200px; /* Adjust based on banner height */
+  left: 40px;
+  width: 200px;
+  padding: 0;
+}
+
+.sidebar a {
+  display: block;
+  margin: 10px 0;
+  text-decoration: none;
+  font-size: 0.9em; /* Slightly smaller font size */
+  color: #451400;
+  padding: 7px 12px; /* Reduced padding for smaller buttons */
+  border-radius: 20px; /* Rounded edges for a modern look */
+  text-align: center;
+  transition: all 0.3s ease;
+  background-color: rgba(255, 255, 255, 0.7); /* Slight background for better visibility */
+  border: 2px solid #1d1c1b; /* Stylish border */
+  font-weight: bold; /* Emphasize the text */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Add subtle shadow */
+}
+
+.sidebar a:hover {
+  background-color: #451400;
+  color: white;
+  border: 2px solid transparent;
+  transform: scale(1.05); /* Slight zoom effect on hover */
+}
+/* Menu Container */
+.menu-container {
+  margin-left: 350px; /* Space for sidebar */
+  margin-top: 50px;
+  margin-bottom: 50px;
+  padding: 50px;
+  max-width: 600px; /* Reduced the size of the container */
+  width: 100%; /* Ensures it doesn't exceed the specified width */
+  background-color: rgba(255, 255, 255, 0.7); /* Slight background for better visibility */
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for definition */
+}
+
+.menu-category {
+  display: none;
+}
+
+.menu-category.active {
+  display: block; /* Display only active category */
+}
+
+.category-header h2 {
+  font-size: 1.8em;
+  color: #451400;
+  text-align: center;
+  border-bottom: 2px solid #d26d47;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.menu-item {
+  margin-bottom: 20px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 15px;
+}
+
+.menu-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu-title .title {
+  font-size: 1.2em;
+  color: #451400;
+}
+
+.menu-title .price {
+  font-size: 1.1em;
+  color: #a63426;
+}
+
+.description {
+  font-size: 0.95em;
+  line-height: 1.6;
+  color: #555;
+  margin-top: 10px;
+  text-align: left;
+}
+.info-text {
+  position: fixed;
+  top: 20%;
+  right: 20px; /* Adjust the position */
+  transform: translateY(-50%);
+  width: 320px; /* Slightly wider for balance */
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.8); /* Increased transparency for background */
+  border: 2px solid rgba(246, 194, 68, 0.5); /* More transparent golden border */
+  border-radius: 20px; /* Rounded corners */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15), 0 4px 6px rgba(0, 0, 0, 0.1); /* Softer shadow */
+  backdrop-filter: blur(10px); /* Elegant glassy effect */
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+  font-size: 1.2em;
+  line-height: 1.8;
+  text-align: left;
+  overflow: hidden; /* To handle decorative elements */
+}
+.info-text {
+  position: fixed;
+  top: 2%; /* Position for the first box */
+  right: 20px;
+  transform: translateY(-35%);
+  width: 320px;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.8); /* Increased transparency for background */
+  border: 2px solid rgba(246, 194, 68, 0.7);
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 6px 8px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(12px);
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+  font-size: 1.2em;
+  line-height: 1.8;
+  text-align: left;
+  overflow: hidden;
+  z-index: 10;
+}
+
+.info-text#info-text-2 {
+  top: 50%; /* Position the second box slightly below the first */
+  transform: translateY(-50%);
+}
+
+.info-text p {
+  margin: 0;
+  color: #444;
+}
+
+.info-text::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    45deg,
+    rgba(246, 194, 68, 0.3),
+    transparent 50%
+  );
+  z-index: -1;
+}
+
+.info-text::after {
+  content: '✨';
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  font-size: 4em;
+  color: rgba(246, 194, 68, 0.6);
+  animation: rotate-glow 6s infinite linear;
+}
+
+@keyframes rotate-glow {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.info-text:hover {
+  transform: translateY(-50%) scale(1.05);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+  transition: all 0.3s ease-in-out;
+}
+
+/* Info Box Container */
+.info-box-container {
+  position: fixed;
+  right: 160px;
+  top: 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  z-index: 1000;
+}
+
+/* Individual Info Box */
+.info-box {
+  background-color: rgba(255, 255, 255, 0.4); /* Increased transparency for background */;
+  color: #444;
+  font-family: 'Lora', serif;
+  padding: 20px 25px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2), inset 0 -1px 0 rgba(255, 255, 255, 0.4);
+  text-align: left;
+  font-size: 1rem;
+  line-height: 1.8;
+  min-width: 240px;
+  max-width: 300px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.info-box:hover {
+  transform: scale(1.03);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3), inset 0 -1px 0 rgba(255, 255, 255, 0.6);
+  background-color: #451400;
+  -webkit-text-fill-color:  #f0eceb;
+}
+
+/* Vegetable Animation Container */
+.info-box::after {
+  content: '';
+  position: absolute;
+  top: -50px; /* Start above the box */
+  left: 50%; /* Center horizontally */
+  width: 50px;
+  height: 50px;
+  background-image: url('images/avocado.png'); /* Replace with your vegetable icons */
+  background-size: contain;
+  background-repeat: no-repeat;
+  animation: dropVegetable 2s infinite ease-in-out;
+  z-index: 1;
+  transform: translateX(-50%);
+  opacity: 0.8;
+}
+
+/* Default Dropping Animation for larger screens */
+@keyframes dropVegetable {
+  0% {
+    transform: translateX(-50%) translateY(-100px); /* Start above the box */
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(20px); /* Drop into view */
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(100px); /* Drop out of view */
+  }
+}
+
+/* Apply the Dropping Animation */
+.info-box::after {
+  animation: dropVegetable 2s infinite ease-in-out;
+}
+
+@media screen and (max-width: 768px) {
+  #map {
+    display: none; 
+  }
+  
+  .info-box-container {
+    display: none;
+  }
+
+  .main-container {
+    flex-direction: column; /* Stack elements vertically on mobile */
+  }
+  .content-container {
+    flex-direction: column;
+    width: 100%; /* Full width on mobile */
+  }
+ .overlay {
+    padding: 20px; /* Add padding for better touch interaction */
+  }
+
+  /* Sidebar Adjustments */
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.9);
+    z-index: 1000;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .sidebar a {
+    font-size: 0.9rem;
+    padding: 8px 12px;
+    margin: 5px;
+    flex: 0 1 auto;
+    white-space: nowrap;
+  }
+
+  .sidebar a:hover {
+    background-color: #6b2a00; /* Darker hover color */
+    transform: scale(1.05); /* Slight scaling for interactivity */
+  }
+
+  /* Menu Container Adjustments */
+  .menu-container {
+    flex-direction: column;
+    margin-top: 80px; /* Add space to prevent overlap with the sidebar */
+    width: 100%; /* Take full width */
+    padding: 15px; /* Add padding */
+    background-color: rgba(17, 16, 16, 0.9); /* Slightly more visible background */
+    box-shadow: none; /* Remove shadow */
+  }
+
+  /* Button Adjustments */
+  .cta-buttons .btn {
+    display: block; /* Stack buttons vertically */
+    width: 100%; /* Full width of container */
+    padding: 12px 15px; /* Adjust padding */
+    font-size: 1rem; /* Readable font size */
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    text-align: center; /* Center-align text */
+    color: white; /* White text */
+    background-color: #451400; /* Button color */
+    border-radius: 8px; /* Rounded corners */
+    border: none; /* No border */
+    margin-bottom: 10px; /* Space between buttons */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+
+  .cta-buttons .btn:hover {
+    background-color: #6b2a00; /* Darker hover effect */
+    transform: scale(1.05); /* Slight scaling */
+  }
+
+  .home-button-container {
+    display: flex;
+    flex-direction: column; /* Stack vertically */
+    align-items: flex-start; /* Align to the top-left */
+    padding: 10px; /* Add padding */
+    gap: 15px; /* Space between buttons */
+    margin-bottom: 20px;
+  }
+
+  /* Video Adjustments */
+  .video-container {
+    height: auto;
+  }
+
+  video {
+    display: none; /* Hide video */
+  }
+
+  .video-fallback {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover; /* Ensure scaling */
+  }
+
+  /* Footer Adjustments */
+  footer {
+    padding: 15px 10px;
+    font-size: 0.8rem;
+    line-height: 1.2;
+  }
+
+  .logos-container a img {
+    width: 30px; /* Adjust icon size */
+    height: 30px;
+  }
+
+  .badge {
+    width: 80px;
+  }
+
+  /* Background Adjustments */
+.adressbackground,
+.menubackground {
+  background: url('images/default-background.jpg') no-repeat center center / cover; /* Add a fallback image */
+  background-attachment: fixed; /* Keeps the background fixed */
+}
+
+@media screen and (max-width: 480px) {
+  .adressbackground,
+  .menubackground {
+    background: none; /* Remove background image for smaller screens */
+    background-color: #f5f5f5; /* Use plain background color */
+  }
+}

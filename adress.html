@@ -2,49 +2,45 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <title>Two Amigos - Locations</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body class="adressbackground">
-
-  <!-- Button Container -->
-  <div class="home-button-container">
-    <!-- Home Button -->
-    <a href="index.html" class="button">Accueil</a>
-    <a href="menu.html" class="button">Découvrir notre menu</a>
-    
-    <!-- Dropdown Button for Table Reservation -->
-    <div class="reservation-dropdown">
+  <!-- Button Container -->  
+<div class="action-buttons-container">
+  <!-- First Column -->
+  <div class="column">
+      <a href="index.html" class="button">Accueil</a>
       <a href="#" class="button dropdown-button" aria-haspopup="true" aria-expanded="false" aria-label="Réserver une table">
-        Réserver une Table
+          Réserver une Table
       </a>
       <div class="dropdown-menu" role="menu">
-        <a href="https://app.resmio.com/two-amigos-hotel-de-ville-2/widget" class="dropdown-item" role="menuitem">
-          Two Amigos Hotel de Ville
-        </a>
-        <a href="https://app.resmio.com/two-amigos/widget" class="dropdown-item" role="menuitem">
-          Two Amigos Henri IV
-        </a>
+          <a href="https://app.resmio.com/two-amigos-hotel-de-ville-2/widget" class="dropdown-item" role="menuitem">
+              Hotel de Ville
+          </a>
+          <a href="https://app.resmio.com/two-amigos/widget" class="dropdown-item" role="menuitem">
+              Henri IV
+          </a>
       </div>
-    </div>
-  
-    <!-- Dropdown Button for Online Ordering -->
-    <div class="reservation-dropdown">
-      <a href="#" class="button dropdown-button" aria-haspopup="true" aria-expanded="false" aria-label="Commander en ligne">
-        Commander en ligne
-      </a>
-      <div class="dropdown-menu" role="menu">
-        <a href="https://www.foodbooking.com/ordering/restaurant/menu" class="dropdown-item" role="menuitem">
-          Two Amigos Hotel de Ville
-        </a>
-        <a href="https://www.foodbooking.com/ordering/restaurant/menu" class="dropdown-item" role="menuitem">
-          Two Amigos Henri IV
-        </a>
-      </div>
-    </div>
   </div>
+  <!-- Second Column -->
+  <div class="column">
+      <a href="menu.html" class="button">Decouvrir notre menu</a>
+      <a href="#" class="button dropdown-button" aria-haspopup="true" aria-expanded="false" aria-label="Commander en ligne">
+          Commander en ligne
+      </a>
+      <div class="dropdown-menu" role="menu">
+          <a href="https://www.foodbooking.com/ordering/restaurant/menu" class="dropdown-item" role="menuitem">
+              Hotel de Ville
+          </a>
+          <a href="https://www.foodbooking.com/ordering/restaurant/menu" class="dropdown-item" role="menuitem">
+              Henri IV
+          </a>
+      </div>
+  </div>
+</div>
   <!-- Location Container -->
   <div class="location-container">
     <h1 class="location-title">Nos Restaurants</h1>
@@ -80,6 +76,7 @@
   <!-- Include External JavaScript -->
   <script src="jsfiles/map.js"></script>
   <script src="jsfiles/review.js"></script>
+  <script src="jsfiles/dropdown.js"></script>
   <script
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBjYgwn-KmMAXkHS5aJYt45t3S3Fzmfbcw&callback=initMap"
     async
