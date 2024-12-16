@@ -637,7 +637,7 @@ video {
   top: 50%;
   left: 0;
   transform: translateY(-50%);
-  background: #264653;
+  background: black;
   color: white;
   padding: 10px 15px;
   border-radius: 0 10px 10px 0;
@@ -648,7 +648,7 @@ video {
 }
 
 .toggle-bar:hover {
-  background: #2a9d8f;
+  background: rgba(0, 0, 0, 0.2);
 }
 
 /* Sidebar Menu */
@@ -674,6 +674,7 @@ video {
   font-family:'Gotham', sans-serif;
   font-weight: bold;
   width: 250px;
+  background-color:  #451400 !important;
   color: white;
   text-align: right;
   text-decoration: none;
@@ -684,16 +685,17 @@ video {
 }
 
 .sidebar-menu a:hover {
-  background: #2a9d8f;
+  background:  #eceaea;
   transform: scale(1.05); /* Subtle hover effect */
 }
 
 #index-page .toggle-bar {
   display: block; /* Force display */
+  margin-top: 280px;
   position: fixed;
   top: 10px;
   left: 10px; /* Adjust horizontal position */
-  background: #2a9d8f; 
+  background:  #451400; 
   color: white;
   padding: 10px 15px; /* Correct padding */
   border-radius: 0 10px 10px 0;
@@ -701,6 +703,29 @@ video {
   cursor: pointer;
   z-index: 9999; /* Ensure it stays on top */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Back to Top Button - Hidden by Default */
+.back-to-top {
+  position: fixed; /* Fix the button on the screen */
+  bottom: 20px; /* Distance from bottom */
+  right: 20px; /* Distance from right */
+  display: none; /* Hidden by default */
+  font-size: 1rem;
+  color: #ffffff; /* White arrow */
+  background-color: #451400; /* Background color */
+  text-decoration: none;
+  padding: 8px 10px;
+  border-radius: 50%; /* Circular shape */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease, opacity 0.3s ease;
+  z-index: 1000; /* Ensure visibility */
+}
+
+.back-to-top:hover {
+  background-color: #090909;
+  transform: scale(1.1); /* Slight zoom on hover */
+  z-index: 1000; /* Ensure visibility */
 }
 
 /* Media Queries */
@@ -858,7 +883,7 @@ video {
     top: 10px;
     left: 10px; /* Keep it on the left side */
     transform: none;
-    background: #2a9d8f; 
+    background-color:  #451400 !important; 
     color: white;
     padding: 15x 20px;
     border-radius: 0 10px 10px 0; /* Adjust border-radius */
@@ -882,7 +907,7 @@ video {
   }
 
   .dropdown-toggle:hover {
-    background: #2a9d8f; /* Slight color change on hover */
+    background: #0f0f0f; /* Slight color change on hover */
     transform: scale(1.05); /* Subtle scaling effect */
   }
 
@@ -937,7 +962,7 @@ video {
     .menubackground {
       margin: 0;
       padding: 0;
-      background: #808080; /* Set background color to grey */
+      background: #f0eeee; /* Set background color to grey */
       height: 80%; /* Maintain the same height */
     }
 
@@ -986,7 +1011,7 @@ video {
         opacity: 0.85;
       }
     }
-    
+
     .video-container::after {
       content: '';
       position: absolute;
@@ -1186,7 +1211,7 @@ video {
       padding: 12px 20px;
       color: #fff;
       text-transform: uppercase;
-      background: #264653;
+      background-color: #451400 !important;
       border: none;
       border-radius: 50px;
       text-align: center;
@@ -1209,6 +1234,10 @@ video {
   
     .dropdown-button[aria-expanded="true"]  {
       display: block;
+    }
+
+    .back-to-top {
+      display: block; /* Make it visible on smaller screens */
     }
 
 }
