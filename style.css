@@ -674,7 +674,7 @@ video {
   font-family:'Gotham', sans-serif;
   font-weight: bold;
   width: 250px;
-  background-color:  #451400 !important;
+  background-color: #f3aa22!important;
   color: white;
   text-align: right;
   text-decoration: none;
@@ -695,7 +695,7 @@ video {
   position: fixed;
   top: 10px;
   left: 10px; /* Adjust horizontal position */
-  background:  #451400; 
+  background:  #f3aa22; 
   color: white;
   padding: 10px 15px; /* Correct padding */
   border-radius: 0 10px 10px 0;
@@ -713,7 +713,7 @@ video {
   display: none; /* Hidden by default */
   font-size: 1rem;
   color: #ffffff; /* White arrow */
-  background-color: #451400; /* Background color */
+  background-color: #f3aa22 !important; /* Background color */
   text-decoration: none;
   padding: 8px 10px;
   border-radius: 50%; /* Circular shape */
@@ -746,7 +746,7 @@ video {
   #adress-page  {
     margin: 0;
     padding: 0;
-    background: linear-gradient(135deg, #e76f51, #f4a261); /* Match index page background */
+    background: rgb(214, 68, 6); /* Match index page background */
     color: #ffffff; /* Ensure text is readable */
     height: 100%; /* Full viewport height */
     background-attachment: fixed; /* Optional: Maintain background while scrolling */
@@ -757,7 +757,7 @@ video {
       flex-direction: column;
       min-height: 100vh; /* Full viewport height */
       margin: 0; /* Remove default margin */
-      background: linear-gradient(135deg, #e76f51, #f4a261); /* Terracotta to sunset orange */
+      background: rgb(214, 68, 6); /* Terracotta to sunset orange */
       color: #ffffff; /* Keep text white for readability */
     }
 
@@ -768,7 +768,7 @@ video {
   }
   #index-footer {
     margin-top: auto;
-    background: linear-gradient(135deg, #f4a261, #e76f51) ; 
+    background:rgb(214, 68, 6) !important; 
     color: white !important; /* Ensure text remains readable on black */
     padding: 10px 0; /* Reduce padding for smaller screens */
     text-align: center;
@@ -883,7 +883,7 @@ video {
     top: 10px;
     left: 10px; /* Keep it on the left side */
     transform: none;
-    background-color:  #451400 !important; 
+    background-color:  #f3aa22 !important; 
     color: white;
     padding: 15x 20px;
     border-radius: 0 10px 10px 0; /* Adjust border-radius */
@@ -1211,7 +1211,7 @@ video {
       padding: 12px 20px;
       color: #fff;
       text-transform: uppercase;
-      background-color: #451400 !important;
+      background-color: #BF6252 !important;
       border: none;
       border-radius: 50px;
       text-align: center;
