@@ -8,26 +8,26 @@
 </head>
 <body id="adress-page" class="menubackground menu-page">
   <!-- Toggle Bar -->
-  <div class="toggle-bar">☰</div>
-
-  <!-- Sidebar Menu -->
+  <div class="toggle-bar" id="toggle-menu">☰</div>
   <div class="sidebar-menu" id="sidebar-menu">
-    <a href="#" class="dropdown-button" data-menu="reserver">Réserver une table</a>
-    <div class="dropdown-menu" id="reserver-dropdown">
-      <a href="https://app.resmio.com/two-amigos-hotel-de-ville-2/widget" class="dropdown-item">Hotel de Ville</a>
-      <a href="https://app.resmio.com/two-amigos/widget" class="dropdown-item">Henri IV</a>
+    <div class="menu-section">
+        <a href="#" class="dropdown-button" data-menu="reserver">RÉSERVER UNE TABLE</a>
+      <div class="dropdown-menu" id="reserver-dropdown">
+        <a href="https://app.resmio.com/two-amigos-hotel-de-ville-2/widget" class="dropdown-item">Hotel de Ville</a>
+        <a href="https://app.resmio.com/two-amigos/widget" class="dropdown-item">Henri IV</a>
+      </div>
     </div>
 
-    <a href="#" class="dropdown-button" data-menu="commander">Commander en ligne</a>
-    <div class="dropdown-menu" id="commander-dropdown">
+    <div class="menu-section">
+      <a href="#" class="dropdown-button" data-menu="commander">COMMANDER EN LIGNE</a>
+      <div class="dropdown-menu" id="commander-dropdown">
         <a href="https://www.foodbooking.com/ordering/restaurant/menu" class="dropdown-item">Hotel de Ville</a>
         <a href="https://www.foodbooking.com/ordering/restaurant/menu" class="dropdown-item">Henri IV</a>
+      </div>
     </div>
-
-    <a href="adress.html">Nos restaurants</a>
+    <a href="menu.html">Découvrir notre menu</a>
     <a href="index.html">Accueil</a>
   </div>
-
   <!-- Button Container (Visible for Desktop) -->  
   <div class="action-buttons-container">
     <div class="column">
@@ -390,8 +390,7 @@
     <a href="#" id="back-to-top" class="back-to-top" aria-label="Back to top"> &#8679; <!-- Upward Arrow Symbol -->
       </a>
   </a>
-    <script src="jsfiles/menu.js"></script> 
-    <script src="jsfiles/dropdown.js"></script> 
+   
     <script src="jsfiles/toggle.js"></script>
     <script src="jsfiles/arrow-back.js"></script>
 </body>

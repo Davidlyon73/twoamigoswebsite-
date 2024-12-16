@@ -81,24 +81,25 @@
       <p class="subtitle">Quand la tradition mexicaine rencontre l’esprit californien!</p>
 
       <!-- Toggle Bar -->
-  <div class="toggle-bar">☰</div>
-
-  <!-- Sidebar Menu -->
+  <div class="toggle-bar" id="toggle-menu">☰</div>
   <div class="sidebar-menu" id="sidebar-menu">
-    <a href="#" class="dropdown-button" data-menu="reserver">Réserver une table</a>
-    <div class="dropdown-menu" id="reserver-dropdown">
-      <a href="https://app.resmio.com/two-amigos-hotel-de-ville-2/widget" class="dropdown-item">Hotel de Ville</a>
-      <a href="https://app.resmio.com/two-amigos/widget" class="dropdown-item">Henri IV</a>
+    <div class="menu-section">
+        <a href="#" class="dropdown-button" data-menu="reserver">RÉSERVER UNE TABLE</a>
+      <div class="dropdown-menu" id="reserver-dropdown">
+        <a href="https://app.resmio.com/two-amigos-hotel-de-ville-2/widget" class="dropdown-item">Hotel de Ville</a>
+        <a href="https://app.resmio.com/two-amigos/widget" class="dropdown-item">Henri IV</a>
+      </div>
     </div>
 
-    <a href="#" class="dropdown-button" data-menu="commander">Commander en ligne</a>
-    <div class="dropdown-menu" id="commander-dropdown">
+    <div class="menu-section">
+      <a href="#" class="dropdown-button" data-menu="commander">COMMANDER EN LIGNE</a>
+      <div class="dropdown-menu" id="commander-dropdown">
         <a href="https://www.foodbooking.com/ordering/restaurant/menu" class="dropdown-item">Hotel de Ville</a>
         <a href="https://www.foodbooking.com/ordering/restaurant/menu" class="dropdown-item">Henri IV</a>
+      </div>
     </div>
-
     <a href="menu.html">Découvrir notre menu</a>
-    <a href="adress.html">Nos restaurants</a>
+    <a href="adress.html">Nos restaurant</a>
   </div>
 
       <div class="action-buttons-container ">
@@ -143,10 +144,8 @@
       <p class="pfooter">&copy; 2024 Two Amigos. Tous droits réservés.</p>
   </footer>
 
-    <!-- Include Scripts -->
-    <script src="jsfiles/jsreservation.js"></script>
-    <script src="jsfiles/dropdown.js"></script>   
+    <!-- Include Scripts --> 
+    <script src="jsfiles/home-video.js"></script>  
     <script src="jsfiles/toggle.js"></script>
-    <script src="js/home-video.js"></script>  
   </body>
 </html>

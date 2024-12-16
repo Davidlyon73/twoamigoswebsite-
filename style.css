@@ -1,31 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Poppins:wght@300;400;700&family=Nunito:wght@300;400;600;700&display=swap');
-@font-face {
-  font-family: 'Gotham';
-  src: url('fonts/Gotham.woff2') format('woff2'), /* Modern browsers */
-       url('fonts/Gotham.woff') format('woff'),   /* Legacy browsers */
-       url('fonts/Gotham.ttf') format('truetype'); /* Older browsers */
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Gotham';
-  src: url('fonts/Gotham-Bold.woff2') format('woff2'),
-       url('fonts/Gotham-Bold.woff') format('woff'),
-       url('fonts/Gotham-Bold.ttf') format('truetype');
-  font-weight: bold;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Gotham';
-  src: url('fonts/Gotham-Italic.woff2') format('woff2'),
-       url('fonts/Gotham-Italic.woff') format('woff'),
-       url('fonts/Gotham-Italic.ttf') format('truetype');
-  font-weight: normal;
-  font-style: italic;
-}
-
 /* Reset styles */
 * {
   margin: 0;
@@ -105,22 +78,48 @@ address, article, aside, div, header, hgroup, main, nav, section {
   cursor: pointer;
 }
 
-/* Default Hidden State */
 .dropdown-menu {
-  display: none; /* Hidden by default */
+  display: none;
+  position: absolute;
+  background-color: transparent;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  z-index: 1000;
   opacity: 0;
   visibility: hidden;
-  transition: all 0.3s ease;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
+  transition: opacity 0.5s ease, visibility 0.7s ease; /* Slowed down */
 }
 
-/* Visible State */
-.dropdown-button[aria-expanded="true"] {
-  display: block; /* Make dropdown visible */
-  visibility: visible; /* Allow interaction */
-  opacity: 1; /* Fully visible */
+/* Hover Dropdown - Show Menu on Hover */
+.home-dropdown:hover .dropdown-menu,
+.hover-dropdown:hover + .dropdown-menu {
+  display: block;
+  opacity: 1;
+  visibility: visible;
 }
 
+/* Show Dropdown When Toggled (JS Adds 'active') */
+.dropdown-menu.active {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Dropdown Items */
+.dropdown-item {
+  text-align: left;
+  padding: 8px;
+  font-size: 0.75rem;
+  color: white;
+  background-color: #6b2a00;
+  transition: background-color 0.3s ease;
+}
+
+.dropdown-item:hover {
+  background-color: #f3aa22;
+  color: #000;
+}
 /* Ensure parent containers do not hide dropdowns */
 .action-buttons-container,
 .column {
@@ -128,25 +127,19 @@ address, article, aside, div, header, hgroup, main, nav, section {
   overflow: visible;
 }
 
-/* Dropdown Items */
-.dropdown-item {
-  display: block;
-  padding: 10px 15px;
-  color: #fff;
-  text-decoration: none;
-  font-size: 0.9rem;
-  border-radius: 3px;
-  transition: background-color 0.2s ease;
-}
-
-.dropdown-item:hover {
-  background-color: #6b2a00;
-}
-
 /* Dropdown Container */
 .home-dropdown {
   position: relative; /* Ensures dropdown is positioned relative to this container */
-  display: inline-block;
+}
+
+/* Smooth Hover Transitions for Buttons */
+.home-dropdown .dropdown-button {
+  transition: background-color 0.5s ease, transform 0.5s ease;
+}
+
+.home-dropdown .dropdown-button:hover {
+  background-color: #6b2a00;
+  transform: scale(1.05);
 }
 
 /* Container for action buttons */
@@ -632,39 +625,116 @@ video {
 
 /* Toggle Bar */
 .toggle-bar {
-  display: none; /* Hidden by default */
+  display: block;
   position: fixed;
-  top: 50%;
-  left: 0;
-  transform: translateY(-50%);
-  background: black;
+  top: 10px;
+  left: 10px;
+  background: #f3aa22;
   color: white;
   padding: 10px 15px;
   border-radius: 0 10px 10px 0;
   cursor: pointer;
-  z-index: 1000;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  font-size: 1.2rem;
+  z-index: 10000; /* Ensure it's always on top */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .toggle-bar:hover {
-  background: rgba(0, 0, 0, 0.2);
+  background-color: #e6891e;
+  transform: scale(1.05);
 }
 
-/* Sidebar Menu */
-.sidebar-menu {
+.sidebar-menu .dropdown-button {
+  display: block;
+  font-size: 0.8rem; /* Smaller font size */
+  padding: 10px; /* Smaller padding */
+  margin-bottom: 12px;
+  border-radius: 4px; /* Slightly rounded corners */
+  text-align: left; /* Align text to the left */
+  width: 100%; /* Ensure full width within sidebar */
+  background-color: #451400; /* Darker background for visibility */
+  color: white; /* Text color */
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.sidebar-menu .dropdown-button:hover {
+  background-color: #6b2a00; /* Darker background on hover */
+  transform: scale(1.02); /* Subtle hover effect */
+}
+
+/* Smaller Dropdown Menu in Sidebar */
+.sidebar-menu .dropdown-menu {
   display: none; /* Hidden by default */
 }
 
-.sidebar-menu.active {
-  display: block;
+.sidebar-menu .dropdown-item {
+  text-align: left;
+  font-size: 0.75rem; /* Small but readable text */
+  padding: 6px 8px; /* Compact padding */
+  margin: 2px 0; /* Space between dropdown items */
+  color: #fff;
+  text-decoration: none;
+  background-color: #451400;
+  transition: background-color 0.3s ease;
 }
 
-/* Sidebar Menu Active State */
-.dropdown-menu.active {
-  display: block !important; /* Force display */
-  visibility: visible;
+.sidebar-menu .dropdown-item:hover {
+  background-color: #f3aa22; /* Highlighted background on hover */
+  color: #000; /* Darker text for better contrast */
+}
+
+.sidebar-menu .dropdown-button + .dropdown-menu {
+  margin-top: 5px; /* Add space between button and dropdown */
+  border-top: 1px solid rgba(255, 255, 255, 0.2); /* Light border */
+}
+
+.sidebar-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 250px; /* Adjust width as needed */
+  height: 100%;
+  background-color: #451400; /* Dark background */
+  color: white;
+  transform: translateX(-100%); /* Slide out of view */
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  opacity: 0; /* Invisible by default */
+  z-index: 1000; /* Ensure it’s on top */
+  overflow-y: auto; /* Scrollable if content exceeds height */
+}
+
+.sidebar-menu.active {
   opacity: 1;
+  transform: translateX(0); /* Slide into view */
+}
+
+/* Toggle Button */
+.toggle-bar {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background-color: #f3aa22;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 1001; /* Above sidebar */
+  transition: background-color 0.3s;
+}
+
+.toggle-bar:hover {
+  background-color: #e6891e;
+}
+.no-scroll {
+  overflow: hidden; /* Prevent scrolling */
+}
+
+body.no-scroll {
+  overflow: hidden; /* Prevent body scroll */
+}
+
+.sidebar-menu .dropdown-menu.active {
+  display: block; /* Show when active */
 }
 
 /* Sidebar Menu Links */
@@ -674,9 +744,9 @@ video {
   font-family:'Gotham', sans-serif;
   font-weight: bold;
   width: 250px;
-  background-color: #f3aa22!important;
+  background-color: black !important;
   color: white;
-  text-align: right;
+  text-align: left;
   text-decoration: none;
   padding: 15px 10px;
   margin-bottom: 10px;
@@ -713,7 +783,7 @@ video {
   display: none; /* Hidden by default */
   font-size: 1rem;
   color: #ffffff; /* White arrow */
-  background-color: #f3aa22; /* Background color */
+  background-color: #f3aa22 !important; /* Background color */
   text-decoration: none;
   padding: 8px 10px;
   border-radius: 50%; /* Circular shape */
@@ -878,18 +948,17 @@ video {
   }
 
   .toggle-bar {
-    display: block; /* Ensure it's visible */
-    position: absolute;
+    display: block;
+    position: fixed;
     top: 10px;
-    left: 10px; /* Keep it on the left side */
-    transform: none;
-    background-color:  #f3aa22 !important; 
+    left: 10px;
+    background-color: #f3aa22;
     color: white;
-    padding: 15x 20px;
-    border-radius: 0 10px 10px 0; /* Adjust border-radius */
-    font-size: 1rem; /* Smaller font size for smaller screens */
+    padding: 10px 15px;
+    border-radius: 0 10px 10px 0;
     cursor: pointer;
-    z-index: 9999;
+    z-index: 10001; /* Ensure toggle bar is on top */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
   }
 
   .dropdown-toggle {
@@ -1084,9 +1153,6 @@ video {
     transform: scale(1.03); /* Slightly less scaling */
     }
     
-    .sidebar {
-      display: none !important;
-    }
     .info-box, .info-box-container {
       display: none !important;
     }
@@ -1239,6 +1305,5 @@ video {
     .back-to-top {
       display: block; /* Make it visible on smaller screens */
     }
-
 }
 

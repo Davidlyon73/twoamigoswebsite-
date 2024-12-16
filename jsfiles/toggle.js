@@ -1,36 +1,45 @@
 document.addEventListener("DOMContentLoaded", () => {
   console.log("toggle.js Loaded");
 
-  // Toggle Sidebar
-  const toggleBar = document.querySelector('.toggle-bar');
-  const sidebarMenu = document.getElementById('sidebar-menu');
+  // Sidebar toggle
+  const toggleMenu = document.getElementById("toggle-menu");
+  const sidebarMenu = document.getElementById("sidebar-menu");
 
-  toggleBar.addEventListener('click', () => {
-    console.log("Sidebar Toggle Clicked");
-    sidebarMenu.classList.toggle('active'); // Toggles active state
-  });
+  if (toggleMenu && sidebarMenu) {
+    // Open/Close sidebar
+    toggleMenu.addEventListener("click", (event) => {
+      console.log("Toggle button clicked");
+      sidebarMenu.classList.toggle("active");
+      document.body.classList.toggle("no-scroll");
+      event.stopPropagation();
+    });
 
-  // Dropdown Menu Functionality
-  document.querySelectorAll('.dropdown-button').forEach(button => {
-    button.addEventListener('click', (event) => {
+    // Close sidebar when clicking outside
+    document.addEventListener("click", (event) => {
+      if (
+        !event.target.closest("#sidebar-menu") &&
+        !event.target.closest("#toggle-menu")
+      ) {
+        sidebarMenu.classList.remove("active");
+        document.body.classList.remove("no-scroll");
+      }
+    });
+  } else {
+    console.warn("Toggle button or sidebar menu not found!");
+  }
+
+  // Dropdown menu logic
+  document.querySelectorAll(".dropdown-button").forEach((button) => {
+    button.addEventListener("click", (event) => {
       event.preventDefault();
-
-      const targetMenu = button.getAttribute('data-menu');
+      const targetMenu = button.getAttribute("data-menu");
       const dropdownMenu = document.getElementById(`${targetMenu}-dropdown`);
 
       if (dropdownMenu) {
-        dropdownMenu.classList.toggle('active');
-        console.log(`Dropdown Menu ${targetMenu} Toggled`);
+        dropdownMenu.classList.toggle("active");
+      } else {
+        console.error(`Dropdown menu with ID "${targetMenu}-dropdown" not found`);
       }
     });
-  });
-
-  // Close dropdowns when clicking outside
-  document.addEventListener('click', (event) => {
-    if (!event.target.closest('.dropdown-button')) {
-      document.querySelectorAll('.dropdown-menu').forEach(menu => {
-        menu.classList.remove('active');
-      });
-    }
   });
 });
