@@ -713,7 +713,7 @@ video {
   display: none; /* Hidden by default */
   font-size: 1rem;
   color: #ffffff; /* White arrow */
-  background-color: #f3aa22 !important; /* Background color */
+  background-color: #f3aa22; /* Background color */
   text-decoration: none;
   padding: 8px 10px;
   border-radius: 50%; /* Circular shape */
@@ -927,7 +927,7 @@ video {
     display: inline-block;
     margin-top: 10px;
     padding: 8px 12px;
-    background-color: #565252;
+    background-color: rgb(214, 68, 6) !important;
     color: rgb(251, 251, 251);
     text-decoration: none;
     border-radius: 5px;
@@ -935,7 +935,7 @@ video {
   }
 
   .direction-link:hover {
-    background-color: #451400;
+    background-color: black;
     transform: scale(1.05);
   }
 
