@@ -1,10 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const video = document.getElementById("home-video");
-  
-    // Play the video if it's not already playing
-    if (video.paused) {
+    const video = document.querySelector("video");
+    if (video) {
       video.play().catch((error) => {
-        console.error("Video play was blocked:", error);
+        console.error("Video playback failed:", error);
       });
     }
   });
