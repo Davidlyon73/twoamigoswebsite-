@@ -3,38 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu - Two Amigos</title>
+    <title>Two Amigos - Menu</title>
     <link rel="stylesheet" href="style.css"> 
-</head>
-<body class="menubackground menu-page">
-<header id="main-header">
-     <div class="action-buttons-container">
-        <div class="column">
-            <a href="index.html" class="button">Accueil</a>
-            <a href="#" class="button dropdown-button" aria-haspopup="true" aria-expanded="false" aria-label="Réserver une table">
-                Réserver une Table
-            </a>
-        <div class="dropdown-menu" role="menu">
-            <a href="https://app.resmio.com/two-amigos-hotel-de-ville-2/widget" class="dropdown-item" role="menuitem">
-                Hotel de Ville
-            </a>
-            <a href="https://app.resmio.com/two-amigos/widget" class="dropdown-item" role="menuitem">
-                Henri IV
-            </a>
+</header>
+ <body id="adress-page" class="menubackground menu-page">
+  <!-- Toggle Bar -->
+  <div class="toggle-bar">☰</div>
+
+  <!-- Sidebar Menu -->
+  <div class="sidebar-menu" id="sidebar-menu">
+    <a href="#" class="dropdown-button" data-menu="reserver">Réserver une table</a>
+    <div class="dropdown-menu" id="reserver-dropdown">
+      <a href="https://app.resmio.com/two-amigos-hotel-de-ville-2/widget" class="dropdown-item">Hotel de Ville</a>
+      <a href="https://app.resmio.com/two-amigos/widget" class="dropdown-item">Henri IV</a>
+    </div>
+
+    <a href="#" class="dropdown-button" data-menu="commander">Commander en ligne</a>
+    <div class="dropdown-menu" id="commander-dropdown">
+        <a href="https://www.foodbooking.com/ordering/restaurant/menu" class="dropdown-item">Hotel de Ville</a>
+        <a href="https://www.foodbooking.com/ordering/restaurant/menu" class="dropdown-item">Henri IV</a>
+    </div>
+
+    <a href="adress.html">Nos restaurants</a>
+    <a href="index.html">Accueil</a>
+  </div>
+
+  <!-- Button Container (Visible for Desktop) -->  
+  <div class="action-buttons-container">
+    <div class="column">
+        <a href="index.html" class="button">Accueil</a>
+        <a href="#" class="button dropdown-button">Réserver une Table</a>
+        <div class="dropdown-menu">
+            <a href="https://app.resmio.com/two-amigos-hotel-de-ville-2/widget" class="dropdown-item">Hotel de Ville</a>
+            <a href="https://app.resmio.com/two-amigos/widget" class="dropdown-item">Henri IV</a>
         </div>
     </div>
     <div class="column">
-        <a href="adress.html" class="button">Nos restaurants</a>
-        <a href="#" class="button dropdown-button" aria-haspopup="true" aria-expanded="false" aria-label="Commander en ligne">
-            Commander en ligne
-        </a>
-        <div class="dropdown-menu" role="menu">
-            <a href="https://www.foodbooking.com/ordering/restaurant/menu" class="dropdown-item" role="menuitem">
-                Hotel de Ville
-            </a>
-            <a href="https://www.foodbooking.com/ordering/restaurant/menu" class="dropdown-item" role="menuitem">
-                Henri IV
-            </a>
+        <a href="menu.html" class="button">Découvrir notre menu</a>
+        <a href="#" class="button dropdown-button">Commander en ligne</a>
+        <div class="dropdown-menu">
+            <a href="https://www.foodbooking.com/ordering/restaurant/menu" class="dropdown-item">Hotel de Ville</a>
+            <a href="https://www.foodbooking.com/ordering/restaurant/menu" class="dropdown-item">Henri IV</a>
         </div>
     </div>
   </div>
@@ -58,7 +67,7 @@
             </div>
         </div>
     <div class="menu-container">
-        <div class="menu-category" id="appetizers">
+        <div class="menu-category active" id="appetizers">
             <div class="category-header">
                 <h2>APPETIZERS</h2>
             </div>
@@ -356,7 +365,7 @@
 
             <!-- Cocktails Sans Alcool Section -->
             <div class="category-header">
-                <h2>COCKTAILS SANS AlCOOL</h2>
+                <h2>COCKTAILS SANS ALCOOL</h2>
             </div>
 
             <div class="menu-item">
@@ -378,6 +387,7 @@
         </div>
     </div>
     <script src="jsfiles/menu.js"></script> <!-- Link to external JavaScript --> 
-    <script src="jsfiles/dropdown.js"></script>   
+    <script src="jsfiles/dropdown.js"></script> 
+    <script src="jsfiles/toggle.js"></script>
 </body>
 </html>

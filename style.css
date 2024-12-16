@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Poppins:wght@300;400;700&family=Nunito:wght@300;400;600;700&display=swap');@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Poppins:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Poppins:wght@300;400;700&family=Nunito:wght@300;400;600;700&display=swap');
 @font-face {
   font-family: 'Gotham';
   src: url('fonts/Gotham.woff2') format('woff2'), /* Modern browsers */
@@ -40,8 +40,21 @@ body {
     overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
+#index-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Full viewport height */
+  margin: 0;
+  padding: 0;
+}
+
+#index-page #main-content {
+  flex: 1; /* Push footer to the bottom */
+}
+
+
 /* Ensure semantic elements are block-level */
-address, article, aside, div, footer, header, hgroup, main, nav, section {
+address, article, aside, div, header, hgroup, main, nav, section {
   display: block;
 }
 
@@ -77,13 +90,13 @@ address, article, aside, div, footer, header, hgroup, main, nav, section {
   border-radius: 5px;
   cursor: pointer;
   text-align: center;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  transition: all 0.3s ease-in-out; /* Unified transition */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Consistent shadow */
 }
 
 .button:hover {
   background-color: #6b2a00;
-  transform: scale(1.05);
+  transform: scale(1.05); /* Smooth scaling effect */
 }
 
 /* Dropdown Button */
@@ -95,22 +108,14 @@ address, article, aside, div, footer, header, hgroup, main, nav, section {
 /* Default Hidden State */
 .dropdown-menu {
   display: none; /* Hidden by default */
-  visibility: hidden; /* Prevent interaction */
-  opacity: 0; /* Invisible */
-  position: absolute; /* Ensure dropdown appears below the button */
-  top: 100%; /* Align with button's bottom */
-  left: 0; /* Align with button's left edge */
-  background-color: #333; /* Dropdown background */
-  border-radius: 5px;
-  padding: 10px;
-  z-index: 2000; /* Ensure dropdown appears above other elements */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
   transition: opacity 0.3s ease, visibility 0.3s ease;
-  overflow: visible; /* Prevent clipping */
 }
 
 /* Visible State */
-.dropdown-button[aria-expanded="true"] + .dropdown-menu {
+.dropdown-button[aria-expanded="true"] {
   display: block; /* Make dropdown visible */
   visibility: visible; /* Allow interaction */
   opacity: 1; /* Fully visible */
@@ -144,12 +149,6 @@ address, article, aside, div, footer, header, hgroup, main, nav, section {
   display: inline-block;
 }
 
-/* Debug Borders (Optional for Testing) */
-.dropdown-menu {
-  border: 1px solid red; /* Temporary for debugging */
-}
-
-
 /* Container for action buttons */
 .action-buttons-container {
   display: flex;
@@ -179,7 +178,7 @@ video {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: brightness(1.5);
+  filter: none;
   opacity: 1;
 }
 
@@ -250,45 +249,71 @@ video {
 }
 
 .nav-dot {
-  width: 12px;
-  height: 12px;
+  width: 0.75rem; /* Relative unit for scalability */
+  height: 0.75rem;
   background-color: #888;
   border-radius: 50%;
-  transition: background-color 0.3s, transform 0.3s;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .nav-dot:hover {
   background-color: #555;
-  transform: scale(1.2);
+  transform: scale(1.2); /* Subtle scaling on hover */
 }
 
 /* Footer */
+#index-footer {
+  position: relative; /* Makes sure z-index applies */
+  z-index: 10; /* Ensure footer stays on top */
+}
 
-footer {
-  background-color: #ffffff; /* Dark background for contrast */
+#index-footer a {
+  display: inline-block; /* Ensure links occupy the right space */
+  text-decoration: none; /* Optional: remove underline */
+}
+
+#index-footer img {
+  pointer-events: auto; /* Allow images to accept click events */
+}
+
+#index-page footer {
+  margin-top: auto; /* Ensure footer sticks to the bottom */
+  background-color: white; /* Footer background */
   padding: 20px 10px;
   text-align: center;
   width: 100%;
 }
 
-.pfooter {
-  font-size: 0.8rem; /* Font size for the text */
-  color: #131212; /* White text color */
-  margin-top: 10px; /* Add space above the footer text */
-  text-align: center; /* Center-align the text */
+#index-page .pfooter {
+  font-size: 0.8rem;
+  color: #131212;
+  margin-top: 10px;
   line-height: 1.5;
-  }
+  text-align: center;
+}
 
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+.pfooter {
+  font-size: 0.9rem;
+  color: #333;
+  margin-top: 10px;
+}
 
 .badge {
-    width: 100px; /* Badge size */
-    height: auto; /* Maintain aspect ratio */
-    max-width: 100%; /* Ensure responsiveness */
-    transition: transform 0.3s ease; /* Add hover effect */
+  width: 100px;
+  height: auto;
+  transition: transform 0.3s ease;
 }
 
 .badge:hover {
-    transform: scale(1.1); /* Slight zoom on hover */
+  transform: scale(1.1);
 }
 
 .adressbackground {
@@ -318,8 +343,12 @@ footer {
 }
 
 /* Sidebar /* Parent Container */
-
-
+.dropdown-content {
+  display: block; /* Visible by default */
+  visibility: visible;
+  opacity: 1;
+  padding: 10px 0;
+}
 
 /* Dropping Animation */
 @keyframes dropVegetable {
@@ -500,65 +529,257 @@ footer {
   -webkit-text-fill-color: #f0eceb;
 }
 
-.mobile-nav-toggle {
-  display: none; /* Hidden by default on larger screens */
-  position: fixed;
-  top: 10px;
-  right: 10px;
-  background-color: #451400;
-  color: #fff;
-  font-size: 1.5rem;
-  border: none;
-  border-radius: 5px;
-  padding: 10px 15px;
-  cursor: pointer;
-  z-index: 1100; /* Above the nav menu */
-}
-.mobile-nav.active {
-  display: flex; /* Display as flex column */
+/* Location Container */
+.location-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
-.mobile-nav {
+/* Page Title */
+.location-title {
+  font-size: 3.5rem;
+  color: #ffffff;
+  margin-bottom: 30px;
+  text-align: left;
+}
+
+/* Content Container */
+.content-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.location-card {
+  flex: 1;
+  background-color: #050505;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(255, 252, 252, 0.1);
+  margin-bottom: 20px;
+  padding: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.location-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown-toggle {
+  font-family:'Gotham', sans-serif;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #ffffff;
+  background: none;
+  border: none;
+  text-align: left;
+  width: 100%;
+  cursor: pointer;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  transition: color 0.3s ease;
+}
+
+.dropdown-toggle:hover {
+  color: #ffffff;
+}
+
+.dropdown-content {
+  display: none;
+  padding: 10px 0;
+  font-size: 0.9rem;
+  color: #ffffff;
+}
+
+.address,
+.phone {
+  margin: 5px 0;
+}
+
+.direction-link {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 12px;
+  background-color: #565252;
+  color: rgb(251, 251, 251);
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.direction-link:hover {
+  background-color: #451400;
+  transform: scale(1.05);
+}
+
+#map {
+  width: 50%; /* Half the screen width */
+  height: 500px; /* Default map height */
+}
+
+.custom-marker {
+  background-color: #ff6347; /* Marker background color */
+  color: white; /* Text color */
+  padding: 5px 10px; /* Padding around text */
+  border-radius: 5px; /* Rounded corners */
+  font-weight: bold; /* Bold text */
+  text-align: center; /* Center align text */
+  white-space: nowrap; /* Prevent text wrapping */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+}
+
+/* Toggle Bar */
+.toggle-bar {
   display: none; /* Hidden by default */
   position: fixed;
-  top: 0;
+  top: 50%;
   left: 0;
-  width: 100%;
-  background-color: rgba(255, 255, 255, 0.95);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  flex-direction: column;
-  gap: 10px;
-  padding: 20px;
+  transform: translateY(-50%);
+  background: #264653;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 0 10px 10px 0;
+  cursor: pointer;
   z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-size: 1.2rem;
 }
 
-.mobile-nav a {
-  display: inline-block;
+.toggle-bar:hover {
+  background: #2a9d8f;
+}
+
+/* Sidebar Menu */
+.sidebar-menu {
+  display: none; /* Hidden by default */
+}
+
+.sidebar-menu.active {
+  display: block;
+}
+
+/* Sidebar Menu Active State */
+.dropdown-menu.active {
+  display: block !important; /* Force display */
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Sidebar Menu Links */
+.sidebar-menu a {
+  display: block;
+  font-size: 1rem;
+  font-family:'Gotham', sans-serif;
+  font-weight: bold;
+  width: 250px;
+  color: white;
+  text-align: right;
   text-decoration: none;
-  font-size: 0.8em; /* Smaller font size */
-  color: #fff;
-  padding: 8px 10px;
+  padding: 15px 10px;
+  margin-bottom: 10px;
   border-radius: 5px;
-  background-color: #451400;
-  margin: 3px;
-  text-align: center;
-  transition: all 0.3s ease;
+  background: #264653;
 }
 
-.mobile-nav a:hover {
-  background-color: #6b2a00;
-  transform: scale(1.05);
+.sidebar-menu a:hover {
+  background: #2a9d8f;
+  transform: scale(1.05); /* Subtle hover effect */
+}
+
+#index-page .toggle-bar {
+  display: block; /* Force display */
+  position: fixed;
+  top: 10px;
+  left: 10px; /* Adjust horizontal position */
+  background: #2a9d8f; 
+  color: white;
+  padding: 10px 15px; /* Correct padding */
+  border-radius: 0 10px 10px 0;
+  font-size: 1rem;
+  cursor: pointer;
+  z-index: 9999; /* Ensure it stays on top */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 /* Media Queries */
 @media (max-width: 768px) {
+  body, #index-footer, #index-footer * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 
   .body {
     margin: 0;
     padding: 0;
-    background: #808080; /* Set background color to grey */
+    background: #000000; /* Set background color to grey */
     height: 80%; /* Maintain the same height */
   }
+
+  #adress-page  {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #e76f51, #f4a261); /* Match index page background */
+    color: #ffffff; /* Ensure text is readable */
+    height: 100%; /* Full viewport height */
+    background-attachment: fixed; /* Optional: Maintain background while scrolling */
+  }
+  
+  body#index-page {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh; /* Full viewport height */
+      margin: 0; /* Remove default margin */
+      background: linear-gradient(135deg, #e76f51, #f4a261); /* Terracotta to sunset orange */
+      color: #ffffff; /* Keep text white for readability */
+    }
+
+  /* Adjust overlay container */
+  #index-overlay {
+    padding: 20px; /* Ensure padding for spacing */
+    margin-bottom: 20px;
+  }
+  #index-footer {
+    margin-top: auto;
+    background: linear-gradient(135deg, #f4a261, #e76f51) ; 
+    color: white !important; /* Ensure text remains readable on black */
+    padding: 10px 0; /* Reduce padding for smaller screens */
+    text-align: center;
+    line-height: 1.2; /* Compact spacing for text */
+  }
+
+  #index-footer .logos-container {
+    display: flex;
+    filter: brightness(0) invert(1) !important; /* Make logos white */
+    justify-content: center; /* Align icons horizontally */
+    align-items: center; /* Align vertically */
+    gap: 5px; /* Add a small gap between icons */
+    margin: 0px 0; /* Reduce margin for the container */
+  }
+
+  /* Styling for logos in the footer */
+  #index-footer .logos-container img {
+    width: 25px; /* Smaller icons */
+    height: auto; /* Maintain aspect ratio */
+    margin: 0px; /* Reduce spacing around icons */
+  }
+
+  #index-footer img[src="images/maitre-restaurateur.png"] {
+    width: 80px; /* Increase size */
+    height: auto; /* Maintain aspect ratio */
+  }
+
+
+  /* Footer text adjustments */
+  .pfooter {
+    font-size: 0.6rem; /* Smaller font size */
+    margin: 0; /* Remove extra margins */
+    line-height: 1; /* Reduce line height */
+    color: white !important;
+  }
+
    /* Home Button Adjustments */
    .home-button-container .button, .sidebar a {
     font-size: 0.8rem;
@@ -599,9 +820,11 @@ footer {
 
   /* Page Title */
   .location-title {
-    font-size: 3.5rem;
-    color: #ffffff;
-    margin-bottom: 30px;
+    margin-top: 60px;
+    font-family: 'Gotham', sans-serif;
+    font-size: 3rem;
+    color: #ffffff !important;
+    margin-bottom: 20px;
     text-align: left;
   }
 
@@ -614,13 +837,12 @@ footer {
   }
 
   /* Location Cards */
-
   .location-card {
     flex: 1; /* Occupies the remaining space next to the map */
-    background-color: #050505;
+    background-color: #f3aa22; /* Light Cream */
+    color: #451400; /* Deep Brown for text */
     border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(255, 252, 252, 0.1);
-    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow */
     padding: 15px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
@@ -628,6 +850,21 @@ footer {
   .location-card:hover {
     transform: scale(1.03);
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+  }
+
+  .toggle-bar {
+    display: block; /* Ensure it's visible */
+    position: absolute;
+    top: 10px;
+    left: 10px; /* Keep it on the left side */
+    transform: none;
+    background: #2a9d8f; 
+    color: white;
+    padding: 15x 20px;
+    border-radius: 0 10px 10px 0; /* Adjust border-radius */
+    font-size: 1rem; /* Smaller font size for smaller screens */
+    cursor: pointer;
+    z-index: 9999;
   }
 
   .dropdown-toggle {
@@ -645,11 +882,12 @@ footer {
   }
 
   .dropdown-toggle:hover {
-    color: #ffffff;
+    background: #2a9d8f; /* Slight color change on hover */
+    transform: scale(1.05); /* Subtle scaling effect */
   }
 
   .dropdown-content {
-    display: none;
+    font-family:'Gotham', sans-serif;
     padding: 10px 0;
     font-size: 0.9rem;
     color: #ffffff;
@@ -683,24 +921,19 @@ footer {
       text-align: center;
     }
 
-    .dropdown-menu {
-      position: relative; /* Remove absolute positioning */
-      top: 0; /* Adjust alignment */
-      width: 100%; /* Take up full width */
-      margin-top: 5px; /* Add space between button and menu */
-    }
-
     .dropdown-item {
       font-size: 0.8rem; /* Slightly larger text */
       padding: 10px; /* Adjust padding for touch targets */
     }
 
     .action-buttons-container {
-      flex-direction: row; /* Align buttons in a single row */
-      justify-content: center; /* Center the buttons */
-      gap: 10px; /* Adjust spacing for smaller screens */
-      }
-    
+      display: none !important;
+    }
+
+    .toggle-bar {
+      display: block; /* Show toggle bar */
+    }
+
     .menubackground {
       margin: 0;
       padding: 0;
@@ -716,10 +949,11 @@ footer {
 
     #map {
       width: 100%; /* Full width */
-      height: 300px;
+      height: 400px;
       margin: 20px; /* Add spacing below */
       align-items: center;
-      margin-bottom: 20px;
+      margin-top: -10px;
+      margin-bottom: 40px;
       margin-left: 0px;
       margin-right: 0px;
     }
@@ -729,29 +963,48 @@ footer {
       align-items: stretch; /* Ensure full width for child elements */
     }
 
-    .pfooter {
-      display: none;
-      }
-
-    footer {
-      padding: 10px; /* Reduce padding */
-      font-size: 0.8rem; /* Smaller text for smaller devices */
-    }
-
     .video-container {
+      position: relative;
       height: 280px;
+      overflow: hidden;
     }
 
-    /* Page Title */
-    .location-title {
-      font-size: 2rem;
-      color: #ffffff;
-      margin-bottom: 10px;
-      text-align: left;
+    .video-container video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.5; /* Slight transparency */
+      animation: fadeIn 1.5s ease-in-out forwards;
+      transition: opacity 0.5s ease-in-out; /* Smooth fade transition */
+    }
+    
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 0.85;
+      }
+    }
+    
+    .video-container::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.4),
+        rgba(255, 255, 255, 0.1)
+      ); /* Soft gradient blending */
+      z-index: 1; /* Ensure overlay is on top of the video */
+      pointer-events: none; /* Prevent interaction */
     }
 
     .logo {
-      width: 50%; /* Adjust logo size */
+      width: 60%; /* Adjust logo size */
       margin-bottom: 0px;
     }
 
@@ -771,13 +1024,6 @@ footer {
       color: #ffffff; /* Optional: Add a softer color */
     }
 
-    .badge {
-      width: 70px; /* Smaller badge */
-    }
-
-    footer {
-      display: none;
-    }
     .adressbackground, .menubackground {
       height: 100%; /* Full viewport height */
     }
@@ -790,24 +1036,6 @@ footer {
 
     .column {
     min-width: unset; /* Remove fixed width for flexibility */
-    }
-
-    .location-cards {
-    flex: 1; /* Occupies the remaining space next to the map */
-    }
-
-    .location-card {
-    background-color: #050505;
-    border-radius: 8px; /* Slightly smaller radius */
-    box-shadow: 0 2px 4px rgba(255, 252, 252, 0.1); /* Reduced shadow */
-    margin-bottom: 15px; /* Smaller spacing between cards */
-    padding: 10px; /* Less padding */
-    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Faster transition */
-    }
-
-    .location-card:hover {
-    transform: scale(1.02); /* Slightly less scaling */
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow */
     }
 
     .address,
@@ -832,123 +1060,156 @@ footer {
     }
     
     .sidebar {
-      display: none;
+      display: none !important;
+    }
+    .info-box, .info-box-container {
+      display: none !important;
     }
 
-    .info-box {
-      display: none;
-    }
-    
     .info-text {
-    display: none; /* Hide the info text for smaller screens */
+    display: none !important;
     }
-  
+
     .sidebar {
-      display: flex;
-      flex-direction: column;
-      width: 200px;
-  }
-  
-  /* Mobile Navigation (Hidden by Default) */
-  .mobile-nav {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.8);
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      gap: 20px;
-      z-index: 1000;
-  }
-  
-  .mobile-nav a {
-      color: #fff;
-      font-size: 1.2rem;
-      text-decoration: none;
-  }
-  
-  /* Toggle Visibility */
-  .mobile-nav.open {
-      display: flex;
-  }
-  
-  /* Mobile Nav Toggle Button */
-  .mobile-nav-toggle {
-      display: none;
-      position: fixed;
-      top: 10px;
-      right: 10px;
-      font-size: 2rem;
-      cursor: pointer;
-      z-index: 1100;
-      color: #fff;
-  }
-      .sidebar {
           display: none;
       }
-  
-      .mobile-nav-toggle {
-          display: block;
-      }
 
-      .menu-container {
+    .menu-container {
         width: 100%;
         margin: 0;
         padding: 10px;
         box-shadow: none;
-        border-radius: 0;
     }
 
-.category-header {
-    margin-top: 20px;
-    margin-bottom: 10px;
-    border-bottom: 2px solid #d26d47;
-    padding-bottom: 5px;
-}
+      .category-header {
+          margin-top: 20px;
+          margin-bottom: 10px;
+          border-bottom: 2px solid #d26d47;
+          padding-bottom: 5px;
+      }
 
-.category-header h2 {
-    font-size: 1.4em;
-    color: #451400;
-    text-align: center;
-}
+      .category-header h2 {
+          font-family: 'Gotham', sans-serif;
+          font-size: 1.2em;
+          color: #451400;
+          text-align: center;
+      }
 
-.menu-item {
-    margin-bottom: 20px;
-    border-bottom: 1px solid #ccc;
-    padding-bottom: 15px;
-}
+      .menu-item {
+          margin-bottom: 20px;
+          border-bottom: 1px solid #ccc;
+          padding-bottom: 15px;
+      }
 
-.menu-title {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 1.2em;
-    font-weight: bold;
-    color: #451400;
-}
+      .menu-title {
+        font-family: 'Gotham', sans-serif;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          font-size: 0.8em;
+          font-weight: bold;
+          color: #451400;
+      }
 
-.menu-title .price {
-    font-size: 1.1em;
-    color: #a63426;
-}
+      .menu-title .price {
+          font-family: 'Gotham', sans-serif;
+          font-size: 0.8rem;
+          color: #a63426;
+      }
 
-.description {
-    font-size: 0.95em;
-    color: #555;
-    line-height: 1.6;
-    margin-top: 10px;
-}
+      .description {
+        font-family: 'Gotham', sans-serif;
+          font-size: 0.95em;
+          color: #555;
+          line-height: 1.6;
+          margin-top: 10px;
+      }
 
-/* Add subtle spacing between sections */
-.menu-category {
-  display: block !important;
-}
-.info-box-container {
-  display: none;
-}
+      /* Add subtle spacing between sections */
+      .menu-category {
+        display: block!important;
+      }
+
+      .menu-category .active {
+        display: none !important;
+      }
+     
+    .overlay {
+      display: flex;
+      flex-direction: column;
+      align-items: center; /* Center items horizontally */
+      justify-content: flex-start; /* Start items at the top */
+      min-height: 100vh; /* Full viewport height */
+      margin-top: -20px; /* Add space at the top */
+    }
+  
+    /* Adjust logo */
+    .overlay .logo {
+      width: 120px; /* Slightly smaller logo */
+      margin-bottom: 30px; /* Add space below logo */
+      padding-top: 10px; /* Add space at the top */
+    }
+  
+    /* Adjust welcome text */
+    .overlay .welcome-text {
+      font-size: 2rem; /* Smaller font size */
+      font-weight: bold;
+      text-align: center;
+      margin: -10px 0; /* Adjusted margins */
+    }
+  
+  
+    /* Adjust subtitle */
+    .overlay .subtitle {
+      font-size: 1rem;
+      text-align: center;
+      margin-top: 10px;
+      margin-bottom: 70px; /* More spacing to push buttons down */
+    }
+  
+    /* Action buttons container */
+    .action-buttons-container {
+      display: flex;
+      flex-direction: column;
+      gap: 20px; /* Space between buttons */
+      width: 90%;
+      margin: auto; /* Center horizontally */
+      margin-top: -10px; /* Push buttons towards the bottom */
+      padding-bottom: 10px; /* Add padding below buttons */
+    }
+  
+    /* Button styling */
+    .action-buttons-container .button {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      font-weight: 600;
+      padding: 12px 20px;
+      color: #fff;
+      text-transform: uppercase;
+      background: #264653;
+      border: none;
+      border-radius: 50px;
+      text-align: center;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease;
+    }
+  
+    .action-buttons-container .button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Enhanced shadow */
+      background: linear-gradient(135deg, #736f6d, #1a1919);
+      transform: scale(1.03);
+    }
+
+    .action-buttons-container .button:active {
+      transform: translateY(0); /* Reset on click */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Slightly reduced shadow */
+    }
+
+  
+    .dropdown-button[aria-expanded="true"]  {
+      display: block;
+    }
+
 }
 

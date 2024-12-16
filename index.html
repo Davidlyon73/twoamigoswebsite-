@@ -63,7 +63,7 @@
       }
     </script>  
   </head>
-  <body>
+  <body id="index-page">
     <!-- Vidéo d'accueil -->
     <div class="video-container">
       <video autoplay muted loop loading="lazy">
@@ -71,16 +71,35 @@
         Votre navigateur ne supporte pas les vidéos.
       </video>
     </div>
-    
-    <!-- Include jQuery before other scripts -->
+         <!-- Include jQuery before other scripts -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
  
-
     <!-- Navigation -->
-    <div class="overlay">
+    <div class="overlay" id="index-overlay">
       <img src="images/logo.png" alt="Logo de Two Amigos" class="logo" loading="lazy">
       <h1 class="welcome-text">Bienvenue chez Two Amigos</h1>
       <p class="subtitle">Quand la tradition mexicaine rencontre l’esprit californien!</p>
+
+      <!-- Toggle Bar -->
+  <div class="toggle-bar">☰</div>
+
+  <!-- Sidebar Menu -->
+  <div class="sidebar-menu" id="sidebar-menu">
+    <a href="#" class="dropdown-button" data-menu="reserver">Réserver une table</a>
+    <div class="dropdown-menu" id="reserver-dropdown">
+      <a href="https://app.resmio.com/two-amigos-hotel-de-ville-2/widget" class="dropdown-item">Hotel de Ville</a>
+      <a href="https://app.resmio.com/two-amigos/widget" class="dropdown-item">Henri IV</a>
+    </div>
+
+    <a href="#" class="dropdown-button" data-menu="commander">Commander en ligne</a>
+    <div class="dropdown-menu" id="commander-dropdown">
+        <a href="https://www.foodbooking.com/ordering/restaurant/menu" class="dropdown-item">Hotel de Ville</a>
+        <a href="https://www.foodbooking.com/ordering/restaurant/menu" class="dropdown-item">Henri IV</a>
+    </div>
+
+    <a href="menu.html">Découvrir notre menu</a>
+    <a href="index.html">Accueil</a>
+  </div>
 
       <div class="action-buttons-container ">
         <div class="home-dropdown">
@@ -108,28 +127,25 @@
     </div>
 
     <!-- Footer -->
-    <footer>
+    <footer id="index-footer">
       <div class="logos-container">
-          <!-- Social Media Links -->
-          <a href="https://www.tiktok.com/@twoamigoslyon" target="_blank" aria-label="Visit our TikTok">
-              <img src="images/tiktok-icon.png" alt="TikTok Icon" loading="lazy">
-          </a>
-          <a href="https://www.instagram.com/twoamigos" target="_blank" aria-label="Visit our Instagram">
-              <img src="images/instagram-icon.png" alt="Instagram Icon" loading="lazy">
-          </a>
-          <a href="https://www.facebook.com/twoamigoslyon" target="_blank" aria-label="Visit our Facebook">
-              <img src="images/facebook-icon.png" alt="Facebook Icon" loading="lazy">
-          </a>
-  
-          <!-- Maitre Restaurateur Badge -->
+          <a href="https://www.tiktok.com/@twoamigoslyon" target="_blank" rel="noopener noreferrer" aria-label="Visit our TikTok">
+            <img src="images/tiktok-icon.png" alt="TikTok Icon" loading="lazy">
+        </a>
+        <a href="https://www.instagram.com/twoamigos" target="_blank" rel="noopener noreferrer" aria-label="Visit our Instagram">
+            <img src="images/instagram-icon.png" alt="Instagram Icon" loading="lazy">
+        </a>
+        <a href="https://www.facebook.com/twoamigoslyon" target="_blank" rel="noopener noreferrer" aria-label="Visit our Facebook">
+            <img src="images/facebook-icon.png" alt="Facebook Icon" loading="lazy">
+        </a>
           <img src="images/maitre-restaurateur.png" alt="Maitre Restaurateur Badge" loading="lazy" class="badge">
       </div>
-      <!-- Footer Text -->
       <p class="pfooter">&copy; 2024 Two Amigos. Tous droits réservés.</p>
   </footer>
 
     <!-- Include Scripts -->
     <script src="jsfiles/jsreservation.js"></script>
     <script src="jsfiles/dropdown.js"></script>   
+    <script src="jsfiles/toggle.js"></script>  
   </body>
 </html>
