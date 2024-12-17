@@ -8,48 +8,10 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body id="adress-page" class="menubackground menu-page">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
   <!-- Toggle Bar -->
-  <div class="toggle-bar" id="toggle-menu">☰</div>
-  <div class="sidebar-menu" id="sidebar-menu">
-    <div class="menu-section">
-        <a href="#" class="dropdown-button" data-menu="reserver">RÉSERVER UNE TABLE</a>
-      <div class="dropdown-menu" id="reserver-dropdown">
-        <a href="https://app.resmio.com/two-amigos-hotel-de-ville-2/widget" class="dropdown-item">Hotel de Ville</a>
-        <a href="https://app.resmio.com/two-amigos/widget" class="dropdown-item">Henri IV</a>
-      </div>
-    </div>
-
-    <div class="menu-section">
-      <a href="#" class="dropdown-button" data-menu="commander">COMMANDER EN LIGNE</a>
-      <div class="dropdown-menu" id="commander-dropdown">
-        <a href="https://www.foodbooking.com/ordering/restaurant/menu" class="dropdown-item">Hotel de Ville</a>
-        <a href="https://www.foodbooking.com/ordering/restaurant/menu" class="dropdown-item">Henri IV</a>
-      </div>
-    </div>
-    <a href="menu.html">Découvrir notre menu</a>
-    <a href="index.html">Accueil</a>
-  </div>
-
-  <!-- Button Container (Visible for Desktop) -->  
-  <div class="action-buttons-container">
-    <div class="column">
-        <a href="index.html" class="button">Accueil</a>
-        <a href="#" class="button dropdown-button">Réserver une Table</a>
-        <div class="dropdown-menu">
-            <a href="https://app.resmio.com/two-amigos-hotel-de-ville-2/widget" class="dropdown-item">Hotel de Ville</a>
-            <a href="https://app.resmio.com/two-amigos/widget" class="dropdown-item">Henri IV</a>
-        </div>
-    </div>
-    <div class="column">
-        <a href="menu.html" class="button">Découvrir notre menu</a>
-        <a href="#" class="button dropdown-button">Commander en ligne</a>
-        <div class="dropdown-menu">
-            <a href="https://www.foodbooking.com/ordering/restaurant/menu" class="dropdown-item">Hotel de Ville</a>
-            <a href="https://www.foodbooking.com/ordering/restaurant/menu" class="dropdown-item">Henri IV</a>
-        </div>
-    </div>
-  </div>
+  <div id="toggle-container"></div>
 
   <!-- Location Container -->
   <div class="location-container">
@@ -80,7 +42,8 @@
 
   <script src="jsfiles/map.js"></script>
   <script src="jsfiles/review.js"></script>
-  <script src="jsfiles/toggle.js"></script>
+  <script src="jsfiles/load-toggle.js"></script>
+
 
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBjYgwn-KmMAXkHS5aJYt45t3S3Fzmfbcw&callback=initMap" async defer></script>
 </body>

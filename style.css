@@ -647,19 +647,20 @@ video {
 .sidebar-menu .dropdown-button {
   display: block;
   font-size: 0.8rem; /* Smaller font size */
-  padding: 10px; /* Smaller padding */
+  padding: 15px; /* Smaller padding */
   margin-bottom: 12px;
   border-radius: 4px; /* Slightly rounded corners */
   text-align: left; /* Align text to the left */
   width: 100%; /* Ensure full width within sidebar */
   background-color: #451400; /* Darker background for visibility */
-  color: white; /* Text color */
+  color: black; /* Text color */
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .sidebar-menu .dropdown-button:hover {
-  background-color: #6b2a00; /* Darker background on hover */
+  background-color: #6b2a00 !important; /* Darker background on hover */
   transform: scale(1.02); /* Subtle hover effect */
+  color: white /* Text color */
 }
 
 /* Smaller Dropdown Menu in Sidebar */
@@ -672,16 +673,12 @@ video {
   font-size: 0.75rem; /* Small but readable text */
   padding: 6px 8px; /* Compact padding */
   margin: 2px 0; /* Space between dropdown items */
-  color: #fff;
+  color: black;
   text-decoration: none;
   background-color: #451400;
   transition: background-color 0.3s ease;
 }
 
-.sidebar-menu .dropdown-item:hover {
-  background-color: #f3aa22; /* Highlighted background on hover */
-  color: #000; /* Darker text for better contrast */
-}
 
 .sidebar-menu .dropdown-button + .dropdown-menu {
   margin-top: 5px; /* Add space between button and dropdown */
@@ -690,12 +687,13 @@ video {
 
 .sidebar-menu {
   position: fixed;
+  margin-top: 60px;
   top: 0;
   left: 0;
   width: 250px; /* Adjust width as needed */
   height: 100%;
-  background-color: #451400; /* Dark background */
-  color: white;
+  background-color: transparent; /* Dark background */
+  color: black;
   transform: translateX(-100%); /* Slide out of view */
   transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
   opacity: 0; /* Invisible by default */
@@ -714,7 +712,7 @@ video {
   top: 20px;
   left: 20px;
   background-color: #f3aa22;
-  color: white;
+  color: black;
   padding: 10px 15px;
   border-radius: 5px;
   cursor: pointer;
@@ -744,14 +742,13 @@ body.no-scroll {
   font-family:'Gotham', sans-serif;
   font-weight: bold;
   width: 250px;
-  background-color: black !important;
-  color: white;
+  background-color: #e6891e !important;
+  color: black;
   text-align: left;
   text-decoration: none;
   padding: 15px 10px;
   margin-bottom: 10px;
   border-radius: 5px;
-  background: #264653;
 }
 
 .sidebar-menu a:hover {
@@ -759,20 +756,18 @@ body.no-scroll {
   transform: scale(1.05); /* Subtle hover effect */
 }
 
-#index-page .toggle-bar {
-  display: block; /* Force display */
-  margin-top: 280px;
-  position: fixed;
-  top: 10px;
-  left: 10px; /* Adjust horizontal position */
-  background:  #f3aa22; 
-  color: white;
-  padding: 10px 15px; /* Correct padding */
-  border-radius: 0 10px 10px 0;
-  font-size: 1rem;
-  cursor: pointer;
-  z-index: 9999; /* Ensure it stays on top */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+#index-page .sidebar-menu a[href="index.html"] {
+  display: none;
+}
+
+/* Hide 'Découvrir notre menu' on menu.html */
+#menu-page .sidebar-menu a[href="menu.html"] {
+  display: none !important;
+}
+
+/* Hide 'Nos restaurants' on adress.html */
+#adress-page .sidebar-menu a[href="adress.html"] {
+  display: none;
 }
 
 /* Back to Top Button - Hidden by Default */
@@ -781,7 +776,7 @@ body.no-scroll {
   bottom: 20px; /* Distance from bottom */
   right: 20px; /* Distance from right */
   display: none; /* Hidden by default */
-  font-size: 1rem;
+  font-size: 2rem;
   color: #ffffff; /* White arrow */
   background-color: #f3aa22 !important; /* Background color */
   text-decoration: none;
@@ -797,6 +792,52 @@ body.no-scroll {
   transform: scale(1.1); /* Slight zoom on hover */
   z-index: 1000; /* Ensure visibility */
 }
+
+#reserver-dropdown .dropdown-item:nth-child(1),
+#commander-dropdown .dropdown-item:nth-child(1) {
+  background-color: rgb(214, 68, 6) !important; /* Yellow for Hotel de Ville */
+  color: white;
+}
+
+#reserver-dropdown .dropdown-item:nth-child(2),
+#commander-dropdown .dropdown-item:nth-child(2) {
+  background-color: rgb(214, 68, 6)  !important; /* Blue for Henri IV */
+  color: white;
+}
+
+#reserver-dropdown .dropdown-item,
+#commander-dropdown .dropdown-item {
+  margin-bottom: 8px; /* Space below each item */
+  padding: 15px; /* Add padding for better spacing inside */
+  border-radius: 5px; /* Optional: Slightly rounded corners */
+}
+
+/* Remove margin for the last dropdown item */
+#reserver-dropdown .dropdown-item:last-child,
+#commander-dropdown .dropdown-item:last-child {
+  margin-bottom: 0;
+}
+
+.dropdown-item {
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 5px;
+  text-decoration: none;
+  display: block;
+  transition: background-color 0.3s ease;
+}
+
+.dropdown-item:hover {
+  opacity: 0.9;
+}
+
+#reserver-dropdown .dropdown-item:hover,
+#commander-dropdown .dropdown-item:hover {
+  background-color: rgb(214, 68, 6) !important; /* Light blue hover color */
+  color: #fff; /* Keep text white */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth hover effect */
+}
+
 
 /* Media Queries */
 @media (max-width: 768px) {

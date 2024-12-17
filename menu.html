@@ -6,49 +6,10 @@
     <title>Two Amigos - Menu</title>
     <link rel="stylesheet" href="style.css"> 
 </head>
-<body id="adress-page" class="menubackground menu-page">
-  <!-- Toggle Bar -->
-  <div class="toggle-bar" id="toggle-menu">☰</div>
-  <div class="sidebar-menu" id="sidebar-menu">
-    <div class="menu-section">
-        <a href="#" class="dropdown-button" data-menu="reserver">RÉSERVER UNE TABLE</a>
-      <div class="dropdown-menu" id="reserver-dropdown">
-        <a href="https://app.resmio.com/two-amigos-hotel-de-ville-2/widget" class="dropdown-item">Hotel de Ville</a>
-        <a href="https://app.resmio.com/two-amigos/widget" class="dropdown-item">Henri IV</a>
-      </div>
-    </div>
-
-    <div class="menu-section">
-      <a href="#" class="dropdown-button" data-menu="commander">COMMANDER EN LIGNE</a>
-      <div class="dropdown-menu" id="commander-dropdown">
-        <a href="https://www.foodbooking.com/ordering/restaurant/menu" class="dropdown-item">Hotel de Ville</a>
-        <a href="https://www.foodbooking.com/ordering/restaurant/menu" class="dropdown-item">Henri IV</a>
-      </div>
-    </div>
-    <a href="menu.html">Découvrir notre menu</a>
-    <a href="index.html">Accueil</a>
-  </div>
-  <!-- Button Container (Visible for Desktop) -->  
-  <div class="action-buttons-container">
-    <div class="column">
-        <a href="index.html" class="button">Accueil</a>
-        <a href="#" class="button dropdown-button">Réserver une Table</a>
-        <div class="dropdown-menu">
-            <a href="https://app.resmio.com/two-amigos-hotel-de-ville-2/widget" class="dropdown-item">Hotel de Ville</a>
-            <a href="https://app.resmio.com/two-amigos/widget" class="dropdown-item">Henri IV</a>
-        </div>
-    </div>
-    <div class="column">
-        <a href="menu.html" class="button">Découvrir notre menu</a>
-        <a href="#" class="button dropdown-button">Commander en ligne</a>
-        <div class="dropdown-menu">
-            <a href="https://www.foodbooking.com/ordering/restaurant/menu" class="dropdown-item">Hotel de Ville</a>
-            <a href="https://www.foodbooking.com/ordering/restaurant/menu" class="dropdown-item">Henri IV</a>
-        </div>
-    </div>
-  </div>
-</header>
-  <div class="parent-container">
+<body id="menu-page" class="menubackground">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <div id="toggle-container"></div>
+        <div class="parent-container">
         <div class="sidebar">
             <a href="#" class="section-button" data-target="appetizers">Appetizers</a>
             <a href="#" class="section-button" data-target="signatureburritos">Signature Burritos</a>
@@ -391,7 +352,7 @@
       </a>
   </a>
    
-    <script src="jsfiles/toggle.js"></script>
-    <script src="jsfiles/arrow-back.js"></script>
+    <script src="jsfiles/load-toggle.js"></script>
+    <script src="jsfiles/arrow-back.js"></script> 
 </body>
 </html>

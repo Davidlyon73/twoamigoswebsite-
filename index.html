@@ -64,6 +64,9 @@
     </script>  
   </head>
   <body id="index-page">
+         <!-- Include jQuery before other scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <div id="toggle-container"></div>
     <!-- Vidéo d'accueil -->
     <div class="video-container">
       <video autoplay muted loop playsinline>
@@ -71,9 +74,7 @@
         Votre navigateur ne supporte pas les vidéos.
       </video>
     </div>
-         <!-- Include jQuery before other scripts -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
- 
+    
     <!-- Navigation -->
     <div class="overlay" id="index-overlay">
       <img src="images/logo.png" alt="Logo de Two Amigos" class="logo" loading="lazy">
@@ -81,52 +82,7 @@
       <p class="subtitle">Quand la tradition mexicaine rencontre l’esprit californien!</p>
 
       <!-- Toggle Bar -->
-  <div class="toggle-bar" id="toggle-menu">☰</div>
-  <div class="sidebar-menu" id="sidebar-menu">
-    <div class="menu-section">
-        <a href="#" class="dropdown-button" data-menu="reserver">RÉSERVER UNE TABLE</a>
-      <div class="dropdown-menu" id="reserver-dropdown">
-        <a href="https://app.resmio.com/two-amigos-hotel-de-ville-2/widget" class="dropdown-item">Hotel de Ville</a>
-        <a href="https://app.resmio.com/two-amigos/widget" class="dropdown-item">Henri IV</a>
-      </div>
-    </div>
-
-    <div class="menu-section">
-      <a href="#" class="dropdown-button" data-menu="commander">COMMANDER EN LIGNE</a>
-      <div class="dropdown-menu" id="commander-dropdown">
-        <a href="https://www.foodbooking.com/ordering/restaurant/menu" class="dropdown-item">Hotel de Ville</a>
-        <a href="https://www.foodbooking.com/ordering/restaurant/menu" class="dropdown-item">Henri IV</a>
-      </div>
-    </div>
-    <a href="menu.html">Découvrir notre menu</a>
-    <a href="adress.html">Nos restaurant</a>
-  </div>
-
-      <div class="action-buttons-container ">
-        <div class="home-dropdown">
-          <button class="button dropdown-button" aria-haspopup="true" aria-expanded="false" aria-label="Réserver une table">
-            Réserver une table 
-          </button>
-          <div class="dropdown-menu" role="menu">
-            <a href="https://app.resmio.com/two-amigos-hotel-de-ville-2/widget" class="dropdown-item" role="menuitem">Two Amigos Hotel de Ville</a>
-            <a href="https://app.resmio.com/two-amigos/widget" class="dropdown-item" role="menuitem">Two Amigos Henri IV</a>
-          </div>
-        </div>
-
-        <div class="home-dropdown">
-          <button class="button dropdown-button" aria-haspopup="true" aria-expanded="false" aria-label="Commander maintenant">
-            Commander en ligne 
-          </button>
-          <div class="dropdown-menu" role="menu">
-            <a href="https://www.foodbooking.com/ordering/restaurant/menu" class="dropdown-item" role="menuitem">Commander à Two Amigos Hotel de Ville</a>
-            <a href="https://www.foodbooking.com/ordering/restaurant/menu" class="dropdown-item" role="menuitem">Commander à Two Amigos Henri IV</a>
-          </div>
-        </div>
-      <a href="menu.html" class="button">Découvrir notre menu</a>
-      <a href="adress.html" class="button">Nos restaurants</a>
-      </div>
-    </div>
-
+      <div id="toggle-container"></div>
     <!-- Footer -->
     <footer id="index-footer">
       <div class="logos-container">
@@ -146,6 +102,6 @@
 
     <!-- Include Scripts --> 
     <script src="jsfiles/home-video.js"></script>  
-    <script src="jsfiles/toggle.js"></script>
+    <script src="jsfiles/load-toggle.js"></script>
   </body>
 </html>
