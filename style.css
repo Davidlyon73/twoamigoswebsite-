@@ -50,107 +50,6 @@ address, article, aside, div, header, hgroup, main, nav, section {
   padding: 20px;
 }
 
-/* General Button Styles */
-.button {
-  display: inline-block;
-  padding: 10px 20px;
-  font-size: 1rem;
-  font-weight: bold;
-  text-decoration: none;
-  color: #fff;
-  background-color: #451400;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  text-align: center;
-  transition: all 0.3s ease-in-out; /* Unified transition */
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Consistent shadow */
-}
-
-.button:hover {
-  background-color: #6b2a00;
-  transform: scale(1.05); /* Smooth scaling effect */
-}
-
-/* Dropdown Button */
-.dropdown-button {
-  position: relative;
-  cursor: pointer;
-}
-
-.dropdown-menu {
-  display: none;
-  position: absolute;
-  background-color: transparent;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  padding: 10px;
-  z-index: 1000;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.5s ease, visibility 0.7s ease; /* Slowed down */
-}
-
-/* Hover Dropdown - Show Menu on Hover */
-.home-dropdown:hover .dropdown-menu,
-.hover-dropdown:hover + .dropdown-menu {
-  display: block;
-  opacity: 1;
-  visibility: visible;
-}
-
-/* Show Dropdown When Toggled (JS Adds 'active') */
-.dropdown-menu.active {
-  display: block;
-  opacity: 1;
-  visibility: visible;
-}
-
-/* Dropdown Items */
-.dropdown-item {
-  text-align: left;
-  padding: 8px;
-  font-size: 0.75rem;
-  color: white;
-  background-color: #6b2a00;
-  transition: background-color 0.3s ease;
-}
-
-.dropdown-item:hover {
-  background-color: #f3aa22;
-  color: #000;
-}
-/* Ensure parent containers do not hide dropdowns */
-.action-buttons-container,
-.column {
-  position: relative;
-  overflow: visible;
-}
-
-/* Dropdown Container */
-.home-dropdown {
-  position: relative; /* Ensures dropdown is positioned relative to this container */
-}
-
-/* Smooth Hover Transitions for Buttons */
-.home-dropdown .dropdown-button {
-  transition: background-color 0.5s ease, transform 0.5s ease;
-}
-
-.home-dropdown .dropdown-button:hover {
-  background-color: #6b2a00;
-  transform: scale(1.05);
-}
-
-/* Container for action buttons */
-.action-buttons-container {
-  display: flex;
-  flex-wrap: wrap; /* Allow buttons to wrap onto the next line */
-  justify-content: center; /* Center-align buttons */
-  gap: 15px; /* Space between buttons and dropdowns */
-  margin-bottom: 30px;
-}
-
 /* Individual button columns */
 .column {
   display: flex;
@@ -227,31 +126,6 @@ video {
   font-weight: bold;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
   margin-bottom: 20px;
-}
-
-/* Vertical Navigation */
-.vertical-nav {
-  position: fixed;
-  top: 50%;
-  left: 10px;
-  transform: translateY(-50%);
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  z-index: 1000;
-}
-
-.nav-dot {
-  width: 0.75rem; /* Relative unit for scalability */
-  height: 0.75rem;
-  background-color: #888;
-  border-radius: 50%;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.nav-dot:hover {
-  background-color: #555;
-  transform: scale(1.2); /* Subtle scaling on hover */
 }
 
 /* Footer */
@@ -333,14 +207,6 @@ video {
   background-size: cover; /* Ensures the image covers the entire viewport */
   background-attachment: fixed; /* Keeps the image fixed while scrolling */
   height: 80%; /* Ensure it spans the full height */
-}
-
-/* Sidebar /* Parent Container */
-.dropdown-content {
-  display: block; /* Visible by default */
-  visibility: visible;
-  opacity: 1;
-  padding: 10px 0;
 }
 
 /* Dropping Animation */
@@ -838,6 +704,23 @@ body.no-scroll {
   transition: background-color 0.3s ease, color 0.3s ease; /* Smooth hover effect */
 }
 
+.top-right-logo {
+  position: absolute;
+  top: 10px; /* Adjust distance from the top */
+  right: 10px; /* Adjust distance from the right */
+  z-index: 1000; /* Ensure it appears above other elements */
+}
+
+.top-right-logo img {
+  width: 200px; /* Set the size of the logo */
+  height: auto; /* Maintain aspect ratio */
+  filter: brightness(0) invert(1); /* Make the logo white */
+  transition: transform 0.3s ease; /* Add a smooth hover effect */
+}
+
+.top-right-logo img:hover {
+  transform: scale(1.1); /* Slight zoom on hover */
+}
 
 /* Media Queries */
 @media (max-width: 768px) {
@@ -1346,5 +1229,16 @@ body.no-scroll {
     .back-to-top {
       display: block; /* Make it visible on smaller screens */
     }
-}
+
+    .top-right-logo {
+      top: 6px; /* Adjust spacing for smaller screens */
+      right: 6px;
+      opacity: 0.3; /* Set semi-transparency: 0.0 (completely transparent) to 1.0 (fully opaque) */
+    }
+  
+    .top-right-logo img {
+      width: 150px; /* Smaller logo for mobile screens */
+    }
+  }
+
 
