@@ -8,9 +8,11 @@
 
 /* Base Styles (default for large screens) */
 body {
+  display: flex;
+  flex-direction: column;
   margin: 0;
-    padding: 0;
-    overflow-x: hidden; /* Prevent horizontal scrolling */
+  padding: 0;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 #index-page {
@@ -60,10 +62,8 @@ address, article, aside, div, header, hgroup, main, nav, section {
 }
 
 /* Video Container */
-.video-container {
-  position: relative;
-  height: 100vh;
-  overflow: hidden;
+.gallery-section, .video-container, .overlay{
+ flex: 1;
 }
 
 video {
@@ -129,9 +129,15 @@ video {
 }
 
 /* Footer */
+
 #index-footer {
-  position: relative; /* Makes sure z-index applies */
-  z-index: 10; /* Ensure footer stays on top */
+  background: rgb(214, 68, 6); /* Footer background */
+  color: white !important; /* Text color */
+  padding: 10px 0; /* Space inside the footer */
+  text-align: center;
+  line-height: 1.2;
+  margin-top: auto; /* Push footer to the bottom */
+  width: 100%;
 }
 
 #index-footer a {
@@ -722,6 +728,72 @@ body.no-scroll {
   transform: scale(1.1); /* Slight zoom on hover */
 }
 
+.hidden {
+  display: none !important;
+}
+
+/* Photo Gallery Section */
+.gallery-section {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #f9f9f9;
+}
+
+.gallery-title {
+  font-size: 2rem;
+  color: #451400;
+  margin-bottom: 10px;
+}
+
+.gallery-description {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.photo-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.gallery-item img:hover {
+  transform: scale(1.1);
+}
+
+.caption {
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  font-size: 0.9rem;
+  text-align: center;
+  padding: 8px 0;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover .caption {
+  opacity: 0.8;
+}
+
 /* Media Queries */
 @media (max-width: 768px) {
   body, #index-footer, #index-footer * {
@@ -770,34 +842,29 @@ body.no-scroll {
   }
 
   #index-footer .logos-container {
-    display: flex;
-    filter: brightness(0) invert(1) !important; /* Make logos white */
-    justify-content: center; /* Align icons horizontally */
-    align-items: center; /* Align vertically */
-    gap: 5px; /* Add a small gap between icons */
-    margin: 0px 0; /* Reduce margin for the container */
+    flex-direction: column; /* Stack icons vertically on smaller screens */
+    gap: 5px;
   }
 
-  /* Styling for logos in the footer */
   #index-footer .logos-container img {
-    width: 25px; /* Smaller icons */
-    height: auto; /* Maintain aspect ratio */
-    margin: 0px; /* Reduce spacing around icons */
+    width: 25px; /* Reduce icon size */
   }
 
+  #index-footer .logos-container img:hover {
+    transform: scale(1.1); /* Slight zoom effect */
+  }
+  
   #index-footer img[src="images/maitre-restaurateur.png"] {
-    width: 80px; /* Increase size */
-    height: auto; /* Maintain aspect ratio */
+    width: 60px; /* Smaller badge for mobile screens */
   }
 
 
   /* Footer text adjustments */
   .pfooter {
-    font-size: 0.6rem; /* Smaller font size */
-    margin: 0; /* Remove extra margins */
-    line-height: 1; /* Reduce line height */
-    color: white !important;
+    font-size: 0.7rem; /* Smaller text size */
+    line-height: 1.4; /* Adjust spacing */
   }
+  
 
    /* Home Button Adjustments */
    .home-button-container .button, .sidebar a {
@@ -1239,6 +1306,67 @@ body.no-scroll {
     .top-right-logo img {
       width: 150px; /* Smaller logo for mobile screens */
     }
+ 
+    .location-title,
+    .content-container {
+        transition: opacity 0.3s ease; /* Optional smooth transition */
+      }
+    
+      .gallery-section {
+        padding: 20px 10px; /* Reduce padding */
+      }
+    
+      .gallery-title {
+        font-size: 1.8rem; /* Slightly smaller title */
+      }
+    
+      .gallery-description {
+        font-size: 0.9rem; /* Adjust description size */
+        margin-bottom: 20px;
+      }
+    
+      .photo-gallery {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Smaller grid items */
+        gap: 15px; /* Reduce gap */
+      }
+    
+      .caption {
+        font-size: 0.8rem; /* Smaller caption */
+        padding: 6px 0; /* Reduce padding */
+      }
+ 
+      .gallery-section {
+        padding: 10px 5px; /* Very small padding */
+      }
+    
+      .gallery-title {
+        font-size: 1.5rem; /* Reduce title size */
+      }
+    
+      .gallery-description {
+        font-size: 0.8rem; /* Smaller description text */
+        line-height: 1.4;
+        margin-bottom: 15px;
+      }
+    
+      .photo-gallery {
+        grid-template-columns: 1fr; /* Single column layout */
+        gap: 10px; /* Tighten gaps */
+      }
+    
+      .gallery-item {
+        border-radius: 5px; /* Smaller border radius */
+      }
+    
+      .gallery-item img {
+        height: 150px; /* Restrict image height */
+      }
+    
+      .caption {
+        font-size: 0.75rem; /* Smaller caption */
+        padding: 5px 0;
+      }
+    
   }
 
 
