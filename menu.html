@@ -8,6 +8,39 @@
 </head>
 <body id="menu-page" class="menubackground">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+    <!-- Gallery Section -->
+<section class="gallery-section">
+        <h2 class="gallery-title">Des saveurs authentiques. Une cuisine maison. Un plaisir partagé.</h2>
+     </div>
+        <div class="photo-gallery" id="scroll-gallery">
+            <div class="gallery-item">
+                <img src="images/index1.png" alt="Tacos garnis" class="popup-image">
+            </div>
+            <div class="gallery-item">
+                <img src="images/index2.png" alt="Burritos maison" class="popup-image">
+            </div>
+            <div class="gallery-item">
+                <img src="images/index4.png" alt="Quesadillas au fromage" class="popup-image">
+            </div>
+            <div class="gallery-item">
+                <img src="images/index6.png" alt="Nachos au guacamole" class="popup-image">
+            </div>
+        </div>
+        <p class="gallery-description">
+            Chez nous, chaque plat est une véritable création maison, élaborée avec soin à partir de produits frais et d’une qualité irréprochable.
+        </p>
+    </section>
+
+    <!-- Image Modal Popup -->
+    <div id="image-modal" style="display: none;">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modal-image">
+        <div id="caption"></div>
+    </div>
+</div>
+
     <div id="toggle-container"></div>
         <div class="parent-container">
         <div class="sidebar">
@@ -354,5 +387,6 @@
    
     <script src="jsfiles/load-toggle.js"></script>
     <script src="jsfiles/arrow-back.js"></script> 
+    <script src="jsfiles/gallery-scroll.js"></script>
 </body>
 </html>

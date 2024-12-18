@@ -12,123 +12,52 @@
     <title>Two Amigos - Restaurant</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon"> <!-- Added favicon -->
-    
-    <!-- Structured data for SEO -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Restaurant",
-        "name": "Two Amigos",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "1 rue Henri IV",
-          "addressLocality": "Lyon",
-          "postalCode": "69002",
-          "addressCountry": "FR"
-        },
-        "telephone": "+33 09 53 11 86 70",
-        "url": "https://www.twoamigos.com",
-        "sameAs": [
-          "https://www.facebook.com/twoamigoslyon",
-          "https://www.instagram.com/twoamigos",
-          "https://www.tiktok.com/@twoamigoslyon"
-        ],
-        "restaurant": [
-          {
-            "@type": "Restaurant",
-            "name": "Two Amigos Hotel de Ville",
-            "address": {
-              "@type": "PostalAddress",
-              "streetAddress": "11 rue terme",
-              "addressLocality": "Lyon",
-              "postalCode": "69001",
-              "addressCountry": "FR"
-            },
-            "telephone": "+33 09 54 69 98 23"
-          },
-          {
-            "@type": "Restaurant",
-            "name": "Two Amigos Ampere",
-            "address": {
-              "@type": "PostalAddress",
-              "streetAddress": "1 rue Henri IV",
-              "addressLocality": "Lyon",
-              "postalCode": "69002",
-              "addressCountry": "FR"
-            },
-            "telephone": "+33 09 53 11 86 70"
-          }
-        ]
-      }
-    </script>  
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
   </head>
+
   <body id="index-page">
-         <!-- Include jQuery before other scripts -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Toggle Bar -->
     <div id="toggle-container"></div>
-    <!-- Vidéo d'accueil -->
-    <div class="video-container">
-      <video autoplay muted loop playsinline>
-        <source src="videos/home-video.mp4" type="video/mp4">
-        Votre navigateur ne supporte pas les vidéos.
-      </video>
-    </div>
-
-    <section class="gallery-section">
-      <h2 class="gallery-title">Découvrez Nos Délicieux Plats</h2>
-      <p class="gallery-description">
-        Chez Two Amigos, chaque plat est une fusion authentique de la cuisine mexicaine et californienne, préparé avec des ingrédients frais et locaux pour vous offrir une expérience unique.
-      </p>
-      <!-- Photo Gallery -->
-      <div class="photo-gallery">
-        <div class="gallery-item">
-          <img src="images/dish1.jpg" alt="Tacos garnis" loading="lazy">
-          <p class="caption">Tacos Garnis</p>
-        </div>
-        <div class="gallery-item">
-          <img src="images/dish2.jpg" alt="Burritos maison" loading="lazy">
-          <p class="caption">Burritos Maison</p>
-        </div>
-        <div class="gallery-item">
-          <img src="images/dish3.jpg" alt="Quesadillas au fromage" loading="lazy">
-          <p class="caption">Quesadillas au Fromage</p>
-        </div>
-        <div class="gallery-item">
-          <img src="images/dish4.jpg" alt="Nachos au guacamole" loading="lazy">
-          <p class="caption">Nachos au Guacamole</p>
-        </div>
+    
+    <!-- Main Content -->
+    <div id="main-content">
+      <!-- Video Section -->
+      <div class="video-container">
+        <video autoplay muted loop playsinline>
+          <source src="videos/home-video.mp4" type="video/mp4">
+          Votre navigateur ne supporte pas les vidéos.
+        </video>
       </div>
-    </section>
 
-    <!-- Navigation -->
+    <!-- Overlay Section -->
     <div class="overlay" id="index-overlay">
       <img src="images/logo.png" alt="Logo de Two Amigos" class="logo" loading="lazy">
       <h1 class="welcome-text">Bienvenue chez Two Amigos</h1>
       <p class="subtitle">Quand la tradition mexicaine rencontre l’esprit californien!</p>
+    </div>
 
-      <!-- Toggle Bar -->
-      <div id="toggle-container"></div>
-      
     <!-- Footer -->
     <footer id="index-footer">
       <div class="logos-container">
-          <a href="https://www.tiktok.com/@twoamigoslyon" target="_blank" rel="noopener noreferrer" aria-label="Visit our TikTok">
-            <img src="images/tiktok-icon.png" alt="TikTok Icon" loading="lazy">
+        <a href="https://www.tiktok.com/@twoamigoslyon" target="_blank" aria-label="Visit our TikTok">
+          <img src="images/tiktok-icon.png" alt="TikTok Icon" loading="lazy">
         </a>
-        <a href="https://www.instagram.com/twoamigos" target="_blank" rel="noopener noreferrer" aria-label="Visit our Instagram">
-            <img src="images/instagram-icon.png" alt="Instagram Icon" loading="lazy">
+        <a href="https://www.instagram.com/twoamigos" target="_blank" aria-label="Visit our Instagram">
+          <img src="images/instagram-icon.png" alt="Instagram Icon" loading="lazy">
         </a>
-        <a href="https://www.facebook.com/twoamigoslyon" target="_blank" rel="noopener noreferrer" aria-label="Visit our Facebook">
-            <img src="images/facebook-icon.png" alt="Facebook Icon" loading="lazy">
+        <a href="https://www.facebook.com/twoamigoslyon" target="_blank" aria-label="Visit our Facebook">
+          <img src="images/facebook-icon.png" alt="Facebook Icon" loading="lazy">
         </a>
-          <img src="images/maitre-restaurateur.png" alt="Maitre Restaurateur Badge" loading="lazy" class="badge">
+        <img src="images/maitre-restaurateur.png" alt="Maitre Restaurateur Badge" loading="lazy" class="badge">
       </div>
       <p class="pfooter">&copy; 2024 Two Amigos. Tous droits réservés.</p>
-  </footer>
+    </footer>
 
-    <!-- Include Scripts --> 
+    <!-- Scripts -->
     <script src="jsfiles/home-video.js"></script>  
     <script src="jsfiles/load-toggle.js"></script>
+    <script src="jsfiles/gallery-scroll.js"></script>
   </body>
 </html>
