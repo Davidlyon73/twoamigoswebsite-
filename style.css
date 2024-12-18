@@ -107,7 +107,7 @@ color: #451400;
 }
 
 .hero-button {
-  background: #FDB833;
+  background: #FDB833 !important;
   color: white;
   padding: 10px 20px;
   border-radius: 5px;
@@ -116,7 +116,7 @@ color: #451400;
 }
 
 .hero-button:hover {
-  background:#451400;
+  background:#451400 !important;
 }
 
 /* About Section (Index Page) */
@@ -538,14 +538,14 @@ video {
 }
 
 .dropdown-toggle:hover {
-  color: #ffffff;
+  color:none;
 }
 
 .dropdown-content {
   display: none;
   padding: 10px 0;
   font-size: 0.9rem;
-  color: #ffffff;
+  color: #451400;
 }
 
 .address,
@@ -600,11 +600,6 @@ video {
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-.toggle-bar:hover {
-  background-color: #99C24D;
-  transform: scale(1.05);
-}
-
 .sidebar-menu .dropdown-button {
   display: block;
   font-size: 0.8rem; 
@@ -633,7 +628,7 @@ video {
   font-size: 0.75rem; 
   padding: 6px 8px; 
   margin: 2px 0; 
-  color: black;
+  color: #451400 !important;
   text-decoration: none;
   background-color: #451400;
   transition: background-color 0.3s ease;
@@ -666,10 +661,6 @@ video {
   transform: translateX(0); 
 }
 
-
-.toggle-bar:hover {
-  background-color: #FDB833;
-}
 .no-scroll {
   overflow: hidden; 
 }
@@ -698,7 +689,7 @@ body.no-scroll {
 }
 
 .sidebar-menu a:hover {
-  background:  #eceaea;
+  background:  #451400;
   transform: scale(1.05); 
 }
 
@@ -706,14 +697,6 @@ body.no-scroll {
   display: none;
 }
 
-#menu-page .sidebar-menu a[href="menu.html"] {
-  display: none !important;
-}
-
-
-#adress-page .sidebar-menu a[href="adress.html"] {
-  display: none;
-}
 
 .back-to-top {
   position: fixed; 
@@ -735,18 +718,6 @@ body.no-scroll {
   background-color: #090909;
   transform: scale(1.1); 
   z-index: 1000; 
-}
-
-#reserver-dropdown .dropdown-item:nth-child(1),
-#commander-dropdown .dropdown-item:nth-child(1) {
-  background-color: rgb(214, 68, 6) !important;
-  color: white;
-}
-
-#reserver-dropdown .dropdown-item:nth-child(2),
-#commander-dropdown .dropdown-item:nth-child(2) {
-  background-color: rgb(214, 68, 6)  !important; 
-  color: white;
 }
 
 #reserver-dropdown .dropdown-item,
@@ -776,8 +747,7 @@ body.no-scroll {
 
 #reserver-dropdown .dropdown-item:hover,
 #commander-dropdown .dropdown-item:hover {
-  background-color: rgb(214, 68, 6) !important; 
-  color: #fff; 
+  background-color: #451400;
   transition: background-color 0.3s ease, color 0.3s ease; 
 }
 
@@ -994,7 +964,7 @@ body.no-scroll {
 
   .location-card:hover {
     transform: scale(1.03);
-    box-shadow: 0 8px 12px #451400;
+    box-shadow: 0 8px 12px #121111;
   }
 
   .toggle-bar {
@@ -1068,6 +1038,7 @@ body.no-scroll {
     .dropdown-item {
       font-size: 0.8rem; 
       padding: 10px; 
+      color: #451400;
     }
 
     .action-buttons-container {
@@ -1193,19 +1164,6 @@ body.no-scroll {
           display: none;
       }
 
-      .menu-container {
-        flex: 1; 
-        max-width: 600px; 
-        margin-left: 0; 
-        margin-right: 0; 
-        padding: 20px;
-        background-color: rgba(255, 255, 255, 0.9); /* Slight transparency for depth */
-        border: 5px solid #FDB833; /* White border */
-        border-radius: 10px; /* Rounded corners for aesthetics */
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Optional: Adds a soft shadow */
-        align-self: flex-start; 
-      }
-      
       .category-header {
           margin-top: 20px;
           margin-bottom: 10px;
