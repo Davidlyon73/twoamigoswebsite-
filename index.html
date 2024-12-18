@@ -21,22 +21,41 @@
     <!-- Toggle Bar -->
     <div id="toggle-container"></div>
     
-    <!-- Main Content -->
-    <div id="main-content">
-      <!-- Video Section -->
-      <div class="video-container">
-        <video autoplay muted loop playsinline>
-          <source src="videos/home-video.mp4" type="video/mp4">
-          Votre navigateur ne supporte pas les vidéos.
-        </video>
+    <!-- Hero Section -->
+    <section class="hero">
+      <video autoplay muted loop playsinline>
+        <source src="videos/home-video.mp4" type="video/mp4">
+        Votre navigateur ne supporte pas les vidéos.
+      </video>
+      <div class="hero-overlay">
+        <img src="images/logo.png" alt="Two Amigos Logo" class="hero-logo" loading="lazy">
+        <h1 class="hero-title">Bienvenue Chez Two Amigos</h1>
+        <p class="hero-subtitle">Quand la tradition mexicaine rencontre l’esprit californien!</p>
+        <a href="#about" class="hero-button">Découvrir</a>
       </div>
+    </section>
 
-    <!-- Overlay Section -->
-    <div class="overlay" id="index-overlay">
-      <img src="images/logo.png" alt="Logo de Two Amigos" class="logo" loading="lazy">
-      <h1 class="welcome-text">Bienvenue chez Two Amigos</h1>
-      <p class="subtitle">Quand la tradition mexicaine rencontre l’esprit californien!</p>
-    </div>
+    <!-- About Section with Cards -->
+    <section class="about-section" id="about">
+      <h2 class="section-title">À PROPOS DE NOUS</h2>
+      <div class="cards-container">
+        <div class="card">
+          <img src="images/index0.jpg" alt="Californian Mexican Cuisine">
+          <h3>Californian-Mexican Cuisine</h3>
+          <p>Fusion unique de saveurs mexicaines et californiennes. Tout est fait maison, préparé avec amour.</p>
+        </div>
+        <div class="card">
+          <img src="images/index1.png" alt="Fresh Ingredients">
+          <h3>Ingrédients Frais</h3>
+          <p>Nos plats sont préparés à partir d’ingrédients locaux et frais pour garantir les meilleures saveurs.</p>
+        </div>
+        <div class="card">
+          <img src="images/index11.png" alt="Warm Ambience">
+          <h3>Ambiance Chaleureuse</h3>
+          <p>Venez profiter d’un cadre chaleureux et accueillant, parfait pour tous vos moments.</p>
+        </div>
+      </div>
+    </section>
 
     <!-- Footer -->
     <footer id="index-footer">
