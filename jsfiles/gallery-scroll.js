@@ -3,21 +3,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Auto-scrolling gallery
   const gallery = document.getElementById("scroll-gallery");
-  if (!gallery) {
-    console.error("Gallery element not found!");
-    return;
-  }
-
-  let scrollSpeed = 1; // Adjust speed
-  function autoScroll() {
-    console.log("Scrolling...");
-    gallery.scrollLeft += scrollSpeed;
-    if (gallery.scrollLeft >= gallery.scrollWidth - gallery.clientWidth) {
-      gallery.scrollLeft = 0; // Reset scrolling
+  if (gallery) {
+    let scrollSpeed = 1; // Adjust speed
+    function autoScroll() {
+      gallery.scrollLeft += scrollSpeed;
+      if (gallery.scrollLeft >= gallery.scrollWidth - gallery.clientWidth) {
+        gallery.scrollLeft = 0; // Reset scrolling
+      }
+      requestAnimationFrame(autoScroll);
     }
-    requestAnimationFrame(autoScroll);
+    autoScroll();
+  } else {
+    console.error("Gallery element not found!");
   }
-  autoScroll();
 
   // Image Modal Popup
   const modal = document.getElementById("image-modal");
@@ -26,20 +24,32 @@ document.addEventListener("DOMContentLoaded", () => {
   const closeModal = document.querySelector(".close");
   const images = document.querySelectorAll(".popup-image");
 
-  images.forEach((img) => {
-    img.addEventListener("click", () => {
-      modal.style.display = "block";
-      modalImg.src = img.src;
-      captionText.innerHTML = img.alt;
+  if (modal && modalImg && captionText && closeModal && images) {
+    images.forEach((img) => {
+      img.addEventListener("click", () => {
+        modal.style.display = "block";
+        modalImg.src = img.src;
+        captionText.innerHTML = img.alt;
+      });
     });
-  });
 
-  closeModal.addEventListener("click", () => {
-    modal.style.display = "none";
-  });
+    closeModal.addEventListener("click", () => {
+      modal.style.display = "none";
+    });
 
-  window.addEventListener("click", (e) => {
-    if (e.target === modal) modal.style.display = "none";
+    window.addEventListener("click", (e) => {
+      if (e.target === modal) modal.style.display = "none";
+    });
+  } else {
+    console.error("Modal or related elements not found!");
+  }
+
+  // Debounce scroll logging
+  let scrollTimeout;
+  document.addEventListener("scroll", () => {
+    clearTimeout(scrollTimeout);
+    scrollTimeout = setTimeout(() => {
+      console.log("Scrolling event triggered...");
+    }, 200); // Adjust debounce delay as needed
   });
 });
-

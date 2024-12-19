@@ -4,73 +4,86 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Two Amigos - Menu</title>
-    <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet"> 
 </head>
 <body id="menu-page" class="menubackground">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-
-    <!-- Gallery Section -->
-<section class="gallery-section">
-        <h2 class="gallery-title">DES SAVEURS AUTHENTIQUES</h2>
-        <br>
-     </div>
-        <div class="photo-gallery" id="scroll-gallery">
-            <div class="gallery-item">
-                <img src="images/index1.png" alt="Tacos garnis" class="popup-image">
-            </div>
-            <div class="gallery-item">
-                <img src="images/index2.png" alt="Burritos maison" class="popup-image">
-            </div>
-            <div class="gallery-item">
-                <img src="images/index3.jpg" alt="Quesadillas au fromage" class="popup-image">
-            </div>
-            <div class="gallery-item">
-                <img src="images/index4.png" alt="Quesadillas au fromage" class="popup-image">
-            </div>
-            <div class="gallery-item">
-                <img src="images/index6.png" alt="Nachos au guacamole" class="popup-image">
-            </div>
-            <div class="gallery-item">
-                <img src="images/index8.png" alt="Nachos au guacamole" class="popup-image">
-            </div>
-            <div class="gallery-item">
-                <img src="images/index9.png" alt="Nachos au guacamole" class="popup-image">
-            </div>
-        </div>
-        <h2 class="h2-menu">UN PLAISIR PARTAGÉ</h2>
-        <p class="gallery-description">
-            Chez nous, chaque plat est une véritable création maison, élaborée avec soin à partir de produits frais et d’une qualité irréprochable.
-        </p>
-    </section>
-
-    <!-- Image Modal Popup -->
-    <div id="image-modal" style="display: none;">
-        <span class="close">&times;</span>
-        <img class="modal-content" id="modal-image">
-        <div id="caption"></div>
-    </div>
-</div>
-
+    <!-- Toggle Bar -->
     <div id="toggle-container"></div>
-        <div class="parent-container">
-        <div class="sidebar">
-            <a href="#" class="section-button" data-target="appetizers">Appetizers</a>
-            <a href="#" class="section-button" data-target="signatureburritos">Signature Burritos</a>
-            <a href="#" class="section-button" data-target="QuesadillasSalades">Quesadillas & Salades</a>
-            <a href="#" class="section-button" data-target="NachosTacos">Nachos & Tacos</a>
-            <a href="#" class="section-button" data-target="desserts">Desserts</a>
-            <a href="#" class="section-button" data-target="cocktails">Cocktails</a>
+
+    <section class="menu-about-section" id="about">
+        <div class="animated-section">
+            <span id="animated-text" class="menu-section-title"></span>
+          </div>
+        <div class="menu-cards-container">
+          <div class="menu-card">
+            <img src="images/menu3.jpg" alt="Californian Mexican Cuisine">
+            <h3>TORTILLAS MAISON</h3>
+            <p>Chaque jour, nous pétrissons et préparons nos tortillas de blé à la main pour vous offrir une authenticité et une fraîcheur inégalées à chaque bouchée. <br> <br>Two Amigos c'est une cuisine généreuse où chaque plat est une promesse de saveurs authentiques, préparé avec passion pour satisfaire les plus gourmands.  🌮✨</p>
+          </div>
+          <div class="menu-card">
+            <img src="images/menu2.jpg" alt="Fresh Ingredients">
+            <h3>INGRÉDIENTS FRAIS</h3>
+            <p>Chaque matin, nous préparons notre délicieux guacamole avec des avocats frais de la variété Hass, écrasés à la main. <br> Et ce n’est pas tout : chaque plat est concocté quotidiennement pour vous garantir une fraîcheur incomparable et une explosion de saveurs à chaque bouchée. 🌿🥑.</p>
+          </div>
+          <div class="menu-card">
+            <img src="images/menu1.jpg" alt="Warm Ambience">
+            <h3>LA QUALITÉ LOCALE AU COEUR DE NOS ASSIETTES</h3>
+            <p>Nous nous engageons à la qualité et à la traçabilité en nous fournissant exclusivement en viande bovine et volaille auprès d’une coopérative locale basée en région Auvergne-Rhône-Alpes 🌱🍖.</p>
+          </div>
         </div>
-        <div class="info-box-container">
-            <div class="info-box">
+      </section>
+
+        <!-- Gallery Section only for @media -->
+    <section class="gallery-section">
+            <h2 class="gallery-title">DES SAVEURS AUTHENTIQUES</h2>
+            <br>
+        </div>
+            <div class="photo-gallery" id="scroll-gallery">
+                <div class="gallery-item">
+                    <img src="images/index1.png" alt="Tacos garnis" class="popup-image">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/index2.png" alt="Burritos maison" class="popup-image">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/index3.jpg" alt="Quesadillas au fromage" class="popup-image">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/index4.png" alt="Quesadillas au fromage" class="popup-image">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/index6.png" alt="Nachos au guacamole" class="popup-image">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/index8.png" alt="Nachos au guacamole" class="popup-image">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/index9.png" alt="Nachos au guacamole" class="popup-image">
+                </div>
+            </div>
+            <h2 class="h2-menu">UN PLAISIR PARTAGÉ</h2>
+            <p class="gallery-description">
                 Chez nous, chaque plat est une véritable création maison, élaborée avec soin à partir de produits frais et d’une qualité irréprochable.
-            </div>
-            <div class="info-box">
-              Nos viandes bovines et notre volaille sont issues d’élevages locaux, 
-              sélectionnés avec soin dans la région Auvergne-Rhône-Alpes, pour garantir fraîcheur et qualité.
-            </div>
+            </p>
+        </section>
+        <!-- Image Modal Popup -->
+        <div id="image-modal" style="display: none;">
+            <span class="close">&times;</span>
+            <img class="modal-content" id="modal-image">
+            <div id="caption"></div>
         </div>
+    </div>
+    <!-- Horizontal Navigation Bar -->
+    <nav class="horizontal-menu desktop-only">
+        <button class="menu-btn" data-target="appetizers">Appetizers</button>
+        <button class="menu-btn" data-target="signatureburritos">Signature Burritos</button>
+        <button class="menu-btn" data-target="QuesadillasSalades">Quesadillas & Salades</button>
+        <button class="menu-btn" data-target="NachosTacos">Nachos & Tacos</button>
+        <button class="menu-btn" data-target="desserts">Desserts</button>
+        <button class="menu-btn" data-target="cocktails">Cocktails</button>
+    </nav>
     <div class="menu-container">
         <div class="menu-category active" id="appetizers">
             <div class="category-header">
@@ -397,7 +410,10 @@
   </a>
    
     <script src="jsfiles/load-toggle.js"></script>
-    <script src="jsfiles/arrow-back.js"></script> 
+    <script src="jsfiles/arrow-back.js"></script>
     <script src="jsfiles/gallery-scroll.js"></script>
+    <script src="jsfiles/scripts.js"></script>
+    <script src="jsfiles/menusectiontitleanime.js"></script>
+    
 </body>
 </html>
