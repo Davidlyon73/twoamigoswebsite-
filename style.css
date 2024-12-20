@@ -390,19 +390,12 @@ video {
   height: auto;
 }
 /*end of footer design */
-
-.adressbackground {
-  margin: 0;
-  padding: 0;
-  background: linear-gradient(
-      rgba(255, 255, 255, 0), 
-      rgba(255, 255, 255, 0)
-    ),
-    url("images/banner.jpg") no-repeat center center fixed;
-  background-size: cover; 
-  background-attachment: fixed; 
-  height: 80%; 
+#adress-page {
+  background: url("images/adress4.JPG") no-repeat center center fixed;
+  background-size: cover; /* Ensures the image covers the whole page */
+  color: #fff; /* Adjusts text color for better readability on the background */
 }
+
 
 
 @keyframes dropVegetable {
@@ -445,7 +438,7 @@ video {
   display: block;
   text-decoration: none;
   font-family: 'Gotham', sans-serif;
-  font-size: 0.9em;
+  font-size: 0.8em;
   color: #451400;
   padding: 7px 12px;
   border-radius: 20px;
@@ -462,6 +455,16 @@ video {
   border: 2px solid transparent;
   transform: scale(1.05);
 }
+
+.sidebar-menu .menu-link, 
+.sidebar-menu .address-link
+.sidebar-menu .home-link {
+  font-size: 0.8rem !important; /* Modify the size */
+  font-weight: bold; /* Add bold styling if required */
+}
+
+
+
 
 .horizontal-menu {
   display: flex;
@@ -599,9 +602,10 @@ video {
 }
 
 .location-title {
+  margin-top: 80px;
   font-size: 3.5rem;
   font-family: 'Gotham', sans-serif;
-  color: #ffffff;
+  color:  #FDB833;
   margin-bottom: 30px;
   text-align: left;
 }
@@ -614,13 +618,16 @@ video {
 }
 
 .location-card {
-  flex: 1;
-  background-color: #050505;
+  display: flex;
+  display: wrap;
+  background-color: #FDB833;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(255, 252, 252, 0.1);
   margin-bottom: 20px;
   padding: 15px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+  max-width: 400px;
 }
 
 .location-card:hover {
@@ -629,14 +636,15 @@ video {
 }
 
 .dropdown-toggle {
+  display: flex;
   font-family:'Gotham', sans-serif;
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: bold;
   color: #ffffff;
   background: none;
   border: none;
   text-align: left;
-  width: 100%;
+  width: 120px;
   cursor: pointer;
   padding: 10px;
   border-bottom: 1px solid #ddd;
@@ -648,15 +656,19 @@ video {
 }
 
 .dropdown-content {
+  
   display: none;
   padding: 10px 0;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   font-family: 'Gotham', sans-serif;
+  font-weight: bold;
+  align-items: left;
   color: #451400;
 }
 
 .address,
-.phone {
+.phone 
+.email {
   margin: 5px 0;
 }
 
@@ -664,7 +676,7 @@ video {
   display: inline-block;
   margin-top: 10px;
   padding: 8px 12px;
-  background-color: #565252;
+  background-color: #451400;
   color: rgb(251, 251, 251);
   text-decoration: none;
   border-radius: 5px;
@@ -677,7 +689,7 @@ video {
 }
 
 #map {
-  width: 50%; 
+  width: 100%; 
   height: 500px; 
 }
 
@@ -717,9 +729,9 @@ video {
   margin-bottom: 12px;
   border-radius: 4px; 
   text-align: left; 
-  width: 100%; 
+  width: 80%; 
   background-color: #FDB833 !important; 
-  color: black; 
+  color: #d64406;; 
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
@@ -735,7 +747,7 @@ video {
 
 .sidebar-menu .dropdown-item {
   text-align: left;
-  font-size: 0.8rem; 
+  font-size: 0.8rem !important; 
   font-weight: bold !important;
   font-family: 'Gotham', sans-serif !important;
   padding: 6px 8px; 
@@ -787,12 +799,12 @@ body.no-scroll {
 
 .sidebar-menu a {
   display: block;
-  font-size: 1rem;
+  font-size: 0.8rem;
   font-family:'Gotham', sans-serif;
   font-weight: bold;
   width: 250px;
   background-color: #FDB833 !important;
-  color: black;
+  color: #451400;
   text-align: left;
   text-decoration: none;
   padding: 15px 10px;
@@ -1076,15 +1088,16 @@ body.no-scroll {
   }
 
   .location-title {
-    margin-top: 60px;
+    margin-top: 100px;
     font-family: 'Gotham', sans-serif;
-    font-size: 3rem;
-    color: #451400 !important;
+    font-size: 4rem;
+    color: #FDB833 !important;
     margin-bottom: 20px;
     text-align: left;
   }
 
   .content-container {
+    margin-top: 180px;
     display: flex; 
     flex-wrap: nowrap; 
     gap: 20px; 
@@ -1114,10 +1127,10 @@ body.no-scroll {
     background-color:#FDB833;
     color: white;
     padding: 10px 15px;
-    border-radius: 0 10px 10px 0;
+    border-radius: 0 10px 10px 10px;
     cursor: pointer;
     z-index: 10001; 
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 6px rgb(255, 254, 254);
   }
 
   .dropdown-toggle {
@@ -1269,6 +1282,12 @@ body.no-scroll {
 
     .adressbackground, .menubackground {
       height: 100%; 
+    }
+
+    #adress-page {
+      background-image: url("images/adress4mobile.png"); /* Smaller image for phones */
+      background-size: 100%; /* Ensure the image fits */
+      background-position: top center;
     }
 
     .column {
