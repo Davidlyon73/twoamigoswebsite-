@@ -619,7 +619,6 @@ video {
 
 .location-card {
   display: flex;
-  display: wrap;
   background-color: #FDB833;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(255, 252, 252, 0.1);
@@ -656,7 +655,6 @@ video {
 }
 
 .dropdown-content {
-  
   display: none;
   padding: 10px 0;
   font-size: 0.8rem;
@@ -1149,7 +1147,7 @@ body.no-scroll {
   }
 
   .dropdown-toggle:hover {
-    background: #451400; 
+    background: transparent; 
     transform: scale(1.05); 
   }
 
