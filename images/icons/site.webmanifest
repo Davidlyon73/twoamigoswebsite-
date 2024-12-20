@@ -1,6 +1,7 @@
 {
   "name": "TWO AMIGOS",
   "short_name": "TwoAmigos",
+  "description": "Découvrez une fusion unique de saveurs mexicaines et californiennes à Lyon.",
   "icons": [
     {
       "src": "/web-app-manifest-72x72.png",
@@ -25,9 +26,22 @@
       "purpose": "maskable"
     }
   ],
-  "start_url": "/index.html",
+  "start_url": "/index.html?source=webmanifest",
   "scope": "/",
-  "theme_color": "#000000",
-  "background_color": "#ffffff",
-  "display": "standalone"
+  "theme_color": "#FDB833",
+  "background_color": "#FFFFFF",
+  "display": "standalone",
+  "lang": "fr",
+  "dir": "ltr",
+  "related_applications": [
+    {
+      "platform": "play",
+      "url": "https://play.google.com/store/apps/details?id=com.twoamigos",
+      "id": "com.twoamigos"
+    },
+    {
+      "platform": "itunes",
+      "url": "https://apps.apple.com/app/id123456789"
+    }
+  ]
 }

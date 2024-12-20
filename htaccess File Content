@@ -1,0 +1,22 @@
+# Enable CORS for .webmanifest files
+<FilesMatch "\.webmanifest$">
+    Header set Access-Control-Allow-Origin "*"
+    Header set Content-Type "application/manifest+json"
+</FilesMatch>
+
+# Ensure the correct MIME type for .webmanifest
+AddType application/manifest+json .webmanifest
+
+# Basic security headers (optional but recommended)
+Header always set X-Content-Type-Options "nosniff"
+Header always set X-Frame-Options "DENY"
+Header always set Referrer-Policy "strict-origin-when-cross-origin"
+Header always set Content-Security-Policy "default-src 'self';"
+
+# Redirect to HTTPS (optional, if you use HTTPS)
+RewriteEngine On
+RewriteCond %{HTTPS} !=on
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Set a fallback for missing files (optional)
+ErrorDocument 404 /404.html

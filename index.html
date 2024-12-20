@@ -1,48 +1,45 @@
 <!DOCTYPE html>
 <html lang="fr">
   <head>
+    <!-- Google Tag Manager -->
+    <script>
+      (function(w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'dataLayer', 'GTM-M84XHLMS');
+    </script>
+    <!-- End Google Tag Manager -->
+    <script>
+      fetch('schema.json')
+        .then((response) => response.json())
+        .then((data) => {
+          const script = document.createElement('script');
+          script.type = 'application/ld+json';
+          script.text = JSON.stringify(data);
+          document.head.appendChild(script);
+        })
+        .catch((error) =>
+          console.error('Erreur lors du chargement du JSON-LD:', error)
+        );
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Two Amigos - Découvrez une fusion unique de saveurs mexicaines et californiennes à Lyon, dans un cadre chaleureux et convivial.">
     <meta name="author" content="Two Amigos Restaurant">
-  
-    <!-- Open Graph Tags -->
     <meta property="og:title" content="Two Amigos - Restaurant">
     <meta property="og:description" content="Découvrez la fusion mexicaine-californienne à Two Amigos à Lyon.">
     <meta property="og:image" content="https://twoamigos.fr/images/restaurant-image.jpg">
     <meta property="og:url" content="https://twoamigos.fr">
-  
-    <!-- Twitter Card Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Two Amigos - Restaurant">
     <meta name="twitter:description" content="Découvrez une fusion unique de saveurs mexicaines et californiennes à Lyon chez Two Amigos.">
     <meta name="twitter:image" content="https://twoamigos.fr/images/restaurant-image.jpg">
-  
-    <title>Two Amigos - Restaurant</title>
-  
-    <!-- Stylesheets and Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-  
-    <!-- Favicon and Icons -->
-    <link rel="icon" type="image/png" href="https://twoamigos.fr/images/icons/favicon-96x96.png" sizes="96x96">
-    <link rel="icon" type="image/svg+xml" href="https://twoamigos.fr/images/icons/favicon.svg">
-    <link rel="shortcut icon" href="https://twoamigos.fr/images/icons/favicon.ico">
-    <link rel="apple-touch-icon" sizes="180x180" href="https://twoamigos.fr/images/icons/apple-touch-icon.png">
-    <link rel="manifest" href="https://twoamigos.fr/images/icons/site.webmanifest">
-  </head><head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Two Amigos - Découvrez une fusion unique de saveurs mexicaines et californiennes à Lyon, dans un cadre chaleureux et convivial.">
-    <meta name="author" content="Two Amigos Restaurant">
-    <meta property="og:title" content="Two Amigos - Restaurant">
-    <meta property="og:description" content="Découvrez la fusion mexicaine-californienne à Two Amigos à Lyon.">
-    <meta property="og:image" content="https://twoamigos.fr/images/restaurant-image.jpg">
-    <meta property="og:url" content="https://twoamigos.fr">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Two Amigos - Restaurant">
-    <meta name="twitter:description" content="Découvrez une fusion unique de saveurs mexicaines et californiennes à Lyon chez Two Amigos.">
-    <meta name="twitter:image" content="https://twoamigos.fr/images/index18.jpg">
     <title>Two Amigos - Restaurant</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
@@ -54,11 +51,22 @@
   </head>
 
   <body id="index-page">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+      <iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-M84XHLMS"
+        height="0"
+        width="0"
+        style="display:none;visibility:hidden"
+      ></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <!-- Toggle Bar -->
     <div id="toggle-container"></div>
-    
+
     <!-- Hero Section -->
     <section class="hero">
       <video autoplay muted loop playsinline>
@@ -95,6 +103,34 @@
       </div>
     </section>
 
+    <!-- Location Section -->
+    <section class="location-container" id="locations">
+      <h1 class="location-title">NOS RESTAURANTS</h1>
+      <div class="content-container">
+        <div class="location-cards">
+          <div class="location-card">
+            <button class="dropdown-toggle" aria-expanded="false">Two Amigos Hotel de Ville ▼</button>
+            <div class="dropdown-content">
+              <p class="address">11 rue Terme, 69001 Lyon</p>
+              <p class="phone">Téléphone: 09 54 69 98 23</p>
+              <p class="email">hoteldeville@twoamigos.fr</p>
+              <a href="https://www.google.com/maps/dir/?api=1&origin=Current+Location&destination=11+Rue+Terme,+69001+Lyon" class="direction-link" target="_blank">Obtenir un itinéraire</a>
+            </div>
+          </div>
+          <div class="location-card">
+            <button class="dropdown-toggle" aria-expanded="false">Two Amigos Henri IV ▼</button>
+            <div class="dropdown-content">
+              <p class="address">1 rue Henri IV, 69002 Lyon</p>
+              <p class="phone">Téléphone: 09 53 11 86 70</p>
+              <p class="email">reservation@twoamigos.fr</p>
+              <a href="https://www.google.com/maps/dir/?api=1&origin=Current+Location&destination=1+Rue+Henri+IV,+69002+Lyon" class="direction-link" target="_blank">Obtenir un itinéraire</a>
+            </div>
+          </div>
+        </div>
+        <div id="map"></div>
+      </div>
+    </section>
+
     <!-- Footer -->
     <footer id="index-footer">
       <div class="logos-container">
@@ -113,7 +149,13 @@
     </footer>
 
     <!-- Scripts -->
-    <script src="jsfiles/home-video.js"></script>  
+    <script src="jsfiles/map.js"></script>
+    <script src="jsfiles/review.js"></script>
     <script src="jsfiles/load-toggle.js"></script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBjYgwn-KmMAXkHS5aJYt45t3S3Fzmfbcw&callback=initMap"
+      async
+      defer
+    ></script>
   </body>
 </html>

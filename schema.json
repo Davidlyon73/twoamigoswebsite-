@@ -1,0 +1,97 @@
+{
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "Two Amigos",
+    "description": "Découvrez une fusion unique de saveurs mexicaines et californiennes à Lyon, dans un cadre chaleureux et convivial.",
+    "image": "https://twoamigos.fr/images/restaurant-image.jpg",
+    "telephone": ["09 54 69 98 23", "09 53 11 86 70"],
+    "email": ["hoteldeville@twoamigos.fr", "reservation@twoamigos.fr"],
+    "url": "https://twoamigos.fr",
+    "address": [
+      {
+        "@type": "PostalAddress",
+        "streetAddress": "11 Rue Terme",
+        "addressLocality": "Lyon",
+        "postalCode": "69001",
+        "addressCountry": "FR",
+        "telephone": "09 54 69 98 23",
+        "email": "hoteldeville@twoamigos.fr"
+      },
+      {
+        "@type": "PostalAddress",
+        "streetAddress": "1 Rue Henri IV",
+        "addressLocality": "Lyon",
+        "postalCode": "69002",
+        "addressCountry": "FR",
+        "telephone": "09 53 11 86 70",
+        "email": "reservation@twoamigos.fr"
+      }
+    ],
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "12:00",
+        "closes": "14:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "19:00",
+        "closes": "22:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Saturday", "Sunday"],
+        "opens": "12:00",
+        "closes": "14:30"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Saturday", "Sunday"],
+        "opens": "19:00",
+        "closes": "22:30"
+      }
+    ],
+    "suitableForDiet": ["VeganDiet", "VegetarianDiet", "GlutenFreeDiet"],
+    "paymentAccepted": ["Cash", "CreditCard"],
+    "amenityFeature": [
+      {
+        "@type": "LocationFeatureSpecification",
+        "name": "Wi-Fi gratuit",
+        "value": true
+      },
+      {
+        "@type": "LocationFeatureSpecification",
+        "name": "Accessible aux personnes à mobilité réduite",
+        "value": true
+      },
+      {
+        "@type": "LocationFeatureSpecification",
+        "name": "Terrasse disponible",
+        "value": true
+      }
+    ],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.7",
+      "reviewCount": "125"
+    },
+    "review": [
+      {
+        "@type": "Review",
+        "author": "Marie Dupont",
+        "datePublished": "2023-10-15",
+        "reviewBody": "Excellente cuisine et service impeccable !",
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5"
+        }
+      }
+    ],
+    "sameAs": [
+      "https://www.facebook.com/twoamigoslyon",
+      "https://www.instagram.com/twoamigos",
+      "https://www.tiktok.com/@twoamigoslyon"
+    ]
+  }

@@ -7,9 +7,10 @@ document.addEventListener("DOMContentLoaded", () => {
     .then((html) => {
       document.getElementById("toggle-container").innerHTML = html;
 
-      // Call functions to bind toggle and dropdown behaviors
+      // Call functions to bind toggle, dropdown, and navigation link behaviors
       bindToggleBehavior();
       bindDropdownBehavior();
+      bindNavigationLinks();
     })
     .catch((error) => console.error("Error loading toggle-menu:", error));
 
@@ -101,6 +102,29 @@ document.addEventListener("DOMContentLoaded", () => {
     document.addEventListener("click", (event) => {
       if (!event.target.closest(".menu-section")) {
         restoreAllButtons();
+      }
+    });
+  }
+
+  // Function to bind navigation links
+  function bindNavigationLinks() {
+    const addressLink = document.querySelector(".address-link");
+
+    if (!addressLink) {
+      console.warn("Address link not found!");
+      return;
+    }
+
+    addressLink.addEventListener("click", (event) => {
+      event.preventDefault();
+      const isIndexPage = window.location.pathname.includes("index.html");
+
+      if (isIndexPage) {
+        // Scroll directly to the #locations section on the index page
+        document.getElementById("locations").scrollIntoView({ behavior: "smooth" });
+      } else {
+        // Redirect to the index.html page with #locations
+        window.location.href = "index.html#locations";
       }
     });
   }
